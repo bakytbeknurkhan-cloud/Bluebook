@@ -1,0 +1,3160 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAT Bluebook - 100% Exact Replica</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body1 {
+            font-family: 'Roboto', Arial, sans-serif;
+            background: #C9DFD3;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+ 
+        /* === START CODE SCREEN === */
+        #startScreen1 {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+ 
+        .top-bar1 {
+            background: #fff;
+            padding: 10px 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 15px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+        }
+ 
+        .top-bar1 span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #272827;
+        }
+ 
+        .content1 {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            margin-top: 80px;
+            align-items: center;
+            padding: 40px 20px;
+            text-align: center;
+            color: #272827;
+        }
+ 
+        h1 {
+            font-size: 35px;
+            font-weight: 400;
+            margin-bottom: 30px;
+            color: #272827;
+        }
+ 
+        .instruction1 {
+            font-size: 18px;
+            flex-direction: column;
+            color: #272827;
+            margin-bottom: 30px;
+            max-width: 520px;
+        }
+ 
+        .instruction1 strong {
+            font-weight: bold;
+        }
+ 
+        .code-inputs1 {
+            display: flex;
+            gap: 14px;
+            margin: 30px 0;
+        }
+ 
+        .code-box1 {
+            width: 60px;
+            height: 60px;
+            font-size: 28px;
+            font-weight: bold;
+            text-align: center;
+            background: #fff;
+            border: 1px solid #000;
+            border-radius: 8px;
+            outline: none;
+        }
+ 
+        .code-box1:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 0 3px rgba(0,123,255,0.2);
+        }
+ 
+        #startBtn1 {
+            background: #FFD60A;
+            color: #000;
+            font-size: 17px;
+            font-weight: bold;
+            padding: 18px 36px;
+            border: 1px solid #000;
+            border-radius: 32px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+ 
+        #startBtn1:disabled {
+            background: #ccc;
+            border-color: #999;
+            cursor: not-allowed;
+        }
+ 
+        .bottom-text1 {
+            position: absolute;
+            bottom: 32px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 14px;
+            color: #000;
+        }
+ 
+        .bottom-text1 a {
+            color: #007bff;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+ 
+        /* === QUESTION SCREEN === */
+        #questionScreen {
+            display: none;
+            flex-direction: column;
+            height: 100vh;
+        }
+ 
+ 
+    </style>
+</head>
+<body><body1>
+    <!-- START CODE SCREEN -->
+    <div id="startScreen1">
+        <div class="top-bar1">
+            <span>
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <circle cx="16" cy="16" r="12" stroke="#444" stroke-width="2" fill="none"></circle>
+                    <text x="16" y="24" text-anchor="middle" font-size="19" font-family="Arial, sans-serif" fill="#444" font-weight="bold">?</text>
+                </svg>
+                Help
+            </span>
+            <span>
+                Return to Home
+                <svg width="52" height="52" viewBox="0 0 54 54" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="2,28 14,15 26,28"></polyline>
+                    <polyline points="6,28 6,38 22,38 22,28"></polyline>
+                    <rect x="11" y="27" width="6" height="6"></rect>
+                </svg>
+            </span>
+        </div>
+ 
+        <div class="content1">
+            <h1>Start Code</h1>
+            <p class="instruction1">Enter your start code now to begin testing. Good luck!</p>
+            <p class="instruction1">The start code contains <strong>numbers only</strong>.</p>
+ 
+            <div class="code-inputs1">
+                <input type="text" class="code-box1" maxlength="1">
+                <input type="text" class="code-box1" maxlength="1">
+                <input type="text" class="code-box1" maxlength="1">
+                <input type="text" class="code-box1" maxlength="1">
+                <input type="text" class="code-box1" maxlength="1">
+                <input type="text" class="code-box1" maxlength="1">
+            </div>
+ 
+            <button id="startBtn1" disabled="">Start Test</button>
+        </div>
+ 
+        <div class="bottom-text1">
+            You can <a>review the instructions</a> that the proctor reads aloud.
+        </div>
+    </div>
+ 
+    <!-- QUESTION SCREEN -->
+    <div id="questionScreen">
+         
+  <meta charset="UTF-8">
+  <title>Bluebook Practice Test</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+body {
+  margin: 0;
+  font-family: "Times New Roman", Times, serif;
+  background: #fff;
+  color: #222;
+  height: 100vh;
+  overflow: hidden;
+}
+#app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.top-bar {
+   font-family: 'Roboto', Arial, sans-serif;
+background: #fff;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  position: relative;
+border: none;
+background-image: repeating-linear-gradient(
+  to right,
+  #ffb3ba 0 30px,   /* пастельно-красный */
+  white 30px 32px,
+  #ffdfba 32px 62px, /* пастельно-оранжевый */
+  white 62px 64px,
+  #ffffba 64px 94px, /* пастельно-жёлтый */
+  white 94px 96px,
+  #baffc9 96px 126px, /* пастельно-зелёный */
+  white 126px 128px,
+  #bae1ff 128px 158px, /* пастельно-голубой */
+  white 158px 160px,
+  #d7baff 160px 190px, /* пастельно-фиолетовый */
+  white 190px 192px,
+  #ffbaff 192px 222px, /* пастельно-розово-фиолетовый */
+  white 222px 224px
+);
+ 
+background-size: auto 2px;   /* толщина линии */
+background-repeat: repeat-x;
+background-position: bottom;
+border: none;
+z-index: 2;
+ 
+}
+.sss{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.section-title {
+margin-top: -2px;
+font-size: 18px;
+  font-weight: 600;
+}
+.top-actions {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+#highlightsBtn {
+padding: 7px 3px 2px 3px;
+  display: flex;
+flex-direction: column;
+align-items: center;
+gap: 8px;
+ 
+background: #fff;
+  border: none;
+  font-size: 12px;
+font-weight: 700;
+  margin-right: 10px;
+  cursor: pointer;
+  color: #222;
+.t{
+display:none;
+}
+}
+#highlightsBtn:hover {
+background: #f0f0f0;
+.y{
+display:none;
+};
+.t{
+display: block;
+}
+}
+#highlightsBtn.active{
+box-shadow: inset 0 -2px 0 0 #1e1e1e;
+}
+#calculatorBtn {
+padding: 7px 3px 2px 3px;
+  display: flex;
+flex-direction: column;
+align-items: center;
+gap: 8px;
+background: #fff;
+  border: none;
+  font-size: 12px;
+font-weight: 700;
+  margin-right: 10px;
+  cursor: pointer;
+  color: #222;
+.t{
+display:none;
+}
+}
+#calculatorBtn:hover {
+background: #f0f0f0;
+.y{
+display:none;
+};
+.t{
+display: block;
+}
+}
+#calculatorBtn.active{
+box-shadow: inset 0 -2px 0 0 #1e1e1e;
+}
+ 
+#referenceBtn {
+padding: 7px 3px 2px 3px;
+  display: flex;
+flex-direction: column;
+align-items: center;
+gap: 11px;
+background: #fff;
+  border: none;
+  font-size: 12px;
+font-weight: 700;
+  margin-right: 10px;
+  cursor: pointer;
+  color: #222;
+.t{
+display:none;
+}
+}
+#referenceBtn:hover {
+background: #f0f0f0;
+.y{
+display:none;
+};
+.t{
+display: block;
+}
+}
+#referenceBtn.active{
+box-shadow: inset 0 -2px 0 0 #1e1e1e;
+}
+top-action-btn
+.more-menu {
+  position: relative;
+}
+#moreBtn {
+  background: none;
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+ 
+}
+#moreBtn:hover {
+  background: #f0f0f0;
+}
+.more-dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 32px;
+  background: #fff;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  min-width: 200px;
+  z-index: 10;
+}
+.more-dropdown div {
+  padding: 12px 24px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.more-dropdown div:hover {
+  background: #f0f0f0;
+}
+.practice-label {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 80px;
+  background: #1b2264;
+  color: #fff;
+  font-size: 12px;
+font-weight: 700;
+width: calc(100% - 100px);
+text-align: center;
+  padding: 5px 16px;
+  border-radius: 0 0 16px 16px;
+  letter-spacing: 0px;
+  z-index: 8;
+}
+/* Directions under title */
+ 
+.directions-dropdown {
+  position: relative;
+  margin-top: 0;
+}
+#directionsBtn {
+font-family: 'Roboto', Arial, sans-serif;
+  background: none;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 0;
+  padding: 0px 4px 4px 4px;
+  color: #333333;
+  font-weight: 600;
+}
+#directionsBtn:hover {
+background: #f0f0f0;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  z-index: 10;
+}
+.directions-modal {
+font-size: 17px;
+  margin-top: 700px;
+font-family: "Times New Roman", Times, serif;
+background: #fff;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.2);
+  padding: 32px;
+  width: 800px;
+height: 600px;
+  color: #222;
+  position: relative;
+}
+.directions-modal button {
+  background: #ffd600;
+font-family: 'Roboto', Arial, sans-serif;
+  border: none;
+font-size: 15px;
+  border-radius: 24px;
+border: 1px solid black;
+  padding: 12px 26px;
+  font-weight: bold;
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  cursor: pointer;
+}
+.directions-modal button:hover {
+border: 2px solid black;
+}
+.tt{
+display:none;
+}
+.timer-center {
+  display: flex;
+ position: absolute;
+  flex-direction: column;
+  align-items: center;
+gap: 3px;
+  margin-bottom: 8px;
+  margin-left: calc(50% - 65px);
+ 
+  z-index: 1;
+}
+.timer-value {
+  font-size: 22px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 6px;
+}
+#hideTimerBtn {
+  background: #fff;
+  border: 1px solid #1e1e1e;
+  font-size: 12px;
+font-weight: 600;
+  cursor: pointer;
+  border-radius: 15px;
+  padding: 2px 0px;
+ justify-content: center;
+  transition: all 0.1s linear;
+width: 49px;
+}
+#hideTimerBtn:hover {
+background: #f0f0f0;
+  box-shadow: inset 0 0 0 1px #1e1e1e;
+}
+#hideTimerBtn:active {
+  text-decoration: underline;
+ 
+}
+/* Split Panel */
+.split-panel {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+  background: #fff;
+  position: relative;
+}
+.panel {
+  flex: 1;
+  overflow: auto;
+  padding: 60px 30px 0 36px;
+  min-width: 200px;
+  transition: width 0.2s;
+}
+.left-panel {
+  border-right: 2px solid #ccc;
+}
+.divider {
+  width: 4px;
+  background: #888888;
+  cursor: ew-resize;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 18px;
+  user-select: none;
+}
+.divider::after {
+  content: '';
+  font-size: 24px;
+}
+ 
+.passage {
+font-family: "Times New Roman", Times, serif;
+  font-size: 18px;
+  line-height: 1.4;
+  max-width: 680px;
+margin-left:auto;
+margin-right:auto;
+}
+.panos{
+max-width: 650px;
+margin-left: auto;
+margin-right: auto;
+}
+.question-header {
+font-family: 'Roboto', Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  margin-bottom: 17px;
+  background: #f0f0f0;
+  position: relative;
+  box-shadow: inset 0 -3px 0 0 #fff;
+  overflow: hidden;
+}
+ 
+ 
+.question-header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+background-image: repeating-linear-gradient(
+  to left,
+  #ffb3ba 0 25px,    /* пастельно-красный */
+  white 25px 27px,   /* белая точка */
+  #ffdfba 27px 52px, /* пастельно-оранжевый */
+  white 52px 54px,
+  #ffffba 54px 79px, /* пастельно-жёлтый */
+  white 79px 81px,
+  #baffc9 81px 106px, /* пастельно-зелёный */
+  white 106px 108px,
+  #bae1ff 108px 133px, /* пастельно-голубой */
+  white 133px 135px,
+  #d7baff 135px 160px, /* пастельно-фиолетовый */
+  white 160px 162px,
+  #ffbaff 162px 187px, /* пастельно-розово-фиолетовый */
+  white 187px 189px
+);
+ 
+background-size: auto 2px;
+background-repeat: repeat-x;
+background-position: bottom;
+z-index: 1;
+pointer-events: none;
+}
+.question-number {
+  background: #1e1e1e;
+  color: #fff;
+  width: 27px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-right: 12px;
+  font-size: 19px;
+  box-shadow: inset 0 -3px 0 0 #fff;
+}
+ 
+.abc-btn {
+  position: relative; 
+margin-bottom: 2px;
+margin-left: auto;
+margin-right: 2%;
+  background: #fff;
+  border: 1px solid #1e1e1e;
+  border-radius: 5px;
+  font-weight: 750;
+  font-size: 11px;
+letter-spacing: -2px;
+  cursor: pointer;
+  padding: 6px 4px;
+}
+.abc-svg {
+  position: absolute; /* ставим поверх текста */
+  top: 50%;           /* вертикально по центру */
+  left: 50%;          /* горизонтально по центру */
+  transform: translate(-50%, -50%); /* сдвигаем в центр кнопки */
+  pointer-events: none; /* чтобы клики шли по кнопке, а не по SVG */
+}
+.abc-btn:hover {
+background: #D3D3D3 ;
+}
+.abc-btn.active {
+color: #fff;
+background: #324dc7 ;
+}
+ 
+.question-text {
+font-family: "Times New Roman", Times, serif;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+.answers {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.answer {
+font-family: "Times New Roman", Times, serif;
+  display: flex;
+  align-items: center;
+  border: 1px solid #1e1e1e;
+  border-radius: 8px;
+  background: #fff;
+  padding: 11px 12px;
+  font-size: 19px;
+  cursor: pointer;
+ 
+  position: relative;
+}
+.answer:hover {
+background: #f2f2f2;
+}
+.answer.selected {
+  border: 1px solid #324dc7;
+box-shadow: inset 0 0 0 2px #324dc7;
+}
+.answer .answer-letter {
+   
+font-weight: bold;
+      font-family: 'Roboto', Arial, sans-serif;
+font-size: 14px;
+  margin-right: 20px;
+  width: 23px;
+  height: 23px;
+  min-width: 23px;
+  min-height: 23px;
+  max-width: 23px;
+  max-height: 23px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #505050;
+  color: #505050;
+ 
+}
+.answer.selected .answer-letter {
+   
+background: #324dc7;
+  color: #fff;
+}
+ 
+.bottom-bar {
+font-family: 'Roboto', Arial, sans-serif;
+  background: #fff;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+border: none;
+  background-image: repeating-linear-gradient(
+  to right,
+  #ffb3ba 0 30px,   /* пастельно-красный */
+  white 30px 32px,
+  #ffdfba 32px 62px, /* пастельно-оранжевый */
+  white 62px 64px,
+  #ffffba 64px 94px, /* пастельно-жёлтый */
+  white 94px 96px,
+  #baffc9 96px 126px, /* пастельно-зелёный */
+  white 126px 128px,
+  #bae1ff 128px 158px, /* пастельно-голубой */
+  white 158px 160px,
+  #d7baff 160px 190px, /* пастельно-фиолетовый */
+  white 190px 192px,
+  #ffbaff 192px 222px, /* пастельно-розово-фиолетовый */
+  white 222px 224px
+);
+background-size: auto 2px;
+background-repeat: repeat-x;
+background-position: top;
+  z-index: 2;
+  position: relative;
+ 
+ 
+ 
+}
+.user-name {
+  font-size: 19px;
+  font-weight: 600;
+  margin-right: 32px;
+}
+.question-nav {
+display: flex;
+    position: absolute;
+    margin-left: calc(50% - 120px);
+}
+#questionNavBtn {
+  background: #1e1e1e;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 8px 8px 16px;
+  font-size: 15px;
+  cursor: pointer;
+  font-weight: bold;
+}
+#questionNavBtn:hover{
+background: #4d4d4d;
+}
+.question-nav-popup {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 56px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.13);
+  min-width: 420px;
+  z-index: 20;
+  padding: 20px 26px 24px 26px;
+}
+.question-nav-popup::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -18px;
+  width: 32px;
+  height: 18px;
+  background: transparent;
+  clip-path: polygon(50% 100%, 0 0, 100% 0);
+  background: #fff;
+  border-left: 1.5px solid #e6e6e6;
+  border-right: 1.5px solid #e6e6e6;
+  border-bottom: 1.5px solid #e6e6e6;
+  z-index: 21;
+}
+.popup-header {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-bottom: 1.5px solid #e6e6e6;
+  padding-bottom: 20px;
+text-align: center;
+padding-right: 20px;
+padding-left: 20px;
+}
+.popup-header button {
+  background: none;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+  position: absolute;
+  right: -15px;
+  top: -15px;
+  color: #222;
+  font-weight: 100;
+}
+.legend {
+  font-size: 15px;
+  margin: 6px 0px -6px 80px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.legend span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 15px;
+  height: 15px;
+  margin-right: -10px;
+  vertical-align: middle;
+  border: 1.5px solid #bbb;
+}
+.legend .current {
+  background: none;
+  border: none;
+  width: 18px;
+  height: 18px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.legend .unanswered {
+  background: #fff;
+  border: 1.5px dashed #222;
+}
+.legend .review {
+  border: none;
+color: #ab2334;
+  position: relative;
+}
+.question-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 20px;
+  margin-bottom: 28px;
+  margin-top: 20px;
+border-top: 1.5px solid #e6e6e6;
+padding-top: 30px;
+}
+.q-btn {
+  width: 30px;
+  height: 30px;
+  border: 1.5px dashed #222;
+  background: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  color: #324dc7;
+  font-weight: 600;
+  transition: background 0.2s, border 0.2s;
+  position: relative;
+  outline: none;
+}
+ 
+.review-page-btn {
+  background: #fff;
+  color: #324dc7;
+  border: 1.5px solid #324dc7;
+  border-radius: 20px;
+  padding: 7px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 0 auto;
+  display: block;
+  transition: box-shadow 0.2s;}
+.review-page-btn:hover {
+  box-shadow: inset 0 0 0 1px #222;
+   
+}
+.next-btn {
+  background: #324dc7;
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.next-btn:hover {
+  background: #1b2264;
+}
+.next-btn:active {
+  box-shadow: inset 0 0 0 1px #fff;
+border: 2px solid #324dc7;
+  text-decoration: underline;
+}
+.back-btn {
+font-family: 'Roboto', Arial, sans-serif;
+  background: #324dc7;
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: bold;
+   
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.back-btn:hover {
+  background: #1b2264;
+}
+.back-btn:active {
+  box-shadow: inset 0 0 0 1px #fff;
+border: 2px solid #324dc7;
+  text-decoration: underline;
+}
+.next-btn:disabled, .back-btn:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+background: #EEEEEF;
+color: #8c8c8c;
+}
+.btnn{
+display:flex;
+margin-left: auto;
+gap:15px;
+}
+/* Hide/Show */
+.hide {
+  display: none !important;
+}
+/* Gray overlay for modal */
+ 
+#dir-arrow{
+top: 10px;
+}
+ 
+.answers {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 10px;
+}
+ 
+.answer-row {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+ 
+.answer {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  border: 1px solid #1e1e1e;
+  border-radius: 8px;
+  background: #fff;
+  padding: 11px 12px;
+  font-size: 18px;
+  cursor: pointer;
+  position: relative;
+  transition: filter 0.2s;
+  min-width: 0;
+  overflow: visible;
+}
+ 
+ 
+.strike-btn {
+  display: none;
+  margin-left: 15px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+  max-width: 16px;
+  max-height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid #222;
+  color: #222;
+  font-weight: 600;
+  font-size: 13px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  text-align: center;
+  line-height: 28px;
+  transition: background 0.2s, border 0.2s, color 0.2s;
+  user-select: none;
+  position: relative;
+}
+ 
+.strike-btn .strike-letter {
+  position: relative;
+  display: inline-block;
+  font-size: 13px;
+  font-family: 'Roboto', Arial, sans-serif;
+  
+}
+.strike-btn .strike-letter::after {
+  content: "";
+  position: absolute;
+  left: -8px;       /* расширяем линию слева */
+  right: -8px;      /* расширяем линию справа */
+  top: 50%;         /* по центру текста */
+  height: 1px;      /* толщина линии */
+  background-color: #505050;
+}
+.abc-mode .strike-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ 
+.answer.striked .answer-letter, .answer.striked .answer-text {
+  opacity: 0.5;
+}
+ 
+.answer.striked .answer-text,
+.answer.striked .answer-letter {
+  text-decoration: line-through;
+}
+ 
+/* Горизонтальная жирная линия поверх зачёркнутого варианта */
+.answer.striked::after {
+  content: "";
+  position: absolute;
+  left: -5px;
+  right: -5px;
+  top: 50%;
+  height:2px;
+  background: #222;
+  border-radius: 2px;
+  z-index: 3;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+ 
+/* Кнопка Undo */
+ 
+.strike-btn.undo {
+letter-spacing:-2px !important;
+  background: none;
+  border: none;
+  color: #222;
+  font-weight: 700;
+  font-size: 13px;
+  width: auto;
+  height: auto;
+margin-left: 10px !important;
+  margin-right: -10px !important;
+  border-radius: 0;
+  box-shadow: none;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  transition: none;
+  padding: 0;
+}
+ 
+.strike-btn.undo .strike-letter {
+  text-decoration: underline;
+  font-size: 14px;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-weight: 700;
+  color: #222;
+  letter-spacing: 0px;
+}
+.strike-btn.undo .strike-letter:hover {
+text-decoration: none ;
+}
+.abc-btn.active .abc-svg .pp {
+  stroke: #fff;
+}
+.abc-btn.active .abc-svg .ppq {
+  stroke: #324dc7;
+}
+/* Жирная линия через весь вариант */
+.answer.striked::after {
+  content: "";
+  position: absolute;
+  left: -5px;
+  right: -5px;
+  top: 50%;
+  height:2px;
+  background: #222;
+  border-radius: 2px;
+  z-index: 3;
+  pointer-events: none;
+  transform: translateY(-50%);
+  display: block;
+}
+ 
+ 
+/* Тонкая линия на букве */
+.strike-btn .strike-letter::after {
+  content: "";
+  position: absolute;
+  left: -8px;
+  right: -8px;
+  top: 50%;
+  height: 1px;
+  background-color: #505050;
+  display: block;
+}
+.strike-btn.undo .strike-letter::after {
+  display: none !important;
+}
+.gray-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(80,80,80,0.3);
+  z-index: 9; /* ниже модалки */
+}
+.dropdown-content {
+  z-index: 100; /* выше оверлея */
+  position: relative;
+}
+#reviewPanel {
+  width: 100%;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  background: #fff;
+  align-items: center;
+  min-height: 0;
+  position: relative;
+ 
+}
+.review-header {
+  text-align: center;
+  margin-top: 65px;
+  margin-bottom: 25px;
+}
+.review-header h1 {
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+.review-header p {
+line-height: 1.8;
+}
+.review-box {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.12);
+  padding: 32px 32px 24px 32px;
+  min-width: 830px;
+  max-width: 1000px;
+}
+.review-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+.review-section-title {
+  font-size: 19px;
+  font-weight: 600;
+}
+.review-legend {
+  font-size: 14px;
+  display: flex;
+  font-weight: 400;
+  gap: 18px;
+  align-items: center;
+}
+.review-legend span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  margin-right: -10px;
+  vertical-align: middle;
+}
+.review-unanswered {
+  background: #fff;
+  border: 1.5px dashed #222;
+}
+ 
+.review-flag {
+  border: none !important;
+color: #ab2334;
+  position: relative;
+}
+ 
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 30px 20px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+.review-q-btn {
+  font-family: 'Roboto', Arial, sans-serif;
+  width: 38px;
+  height: 38px;
+  border: 1px dashed #000;
+  background: #fff;
+  color: #324dc7;
+  font-size: 22px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.review-q-btn:hover {
+  background: #f0f0f0;
+}
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #eee;
+  border-top: 5px solid #222;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
+}
+/* LOADING SCREEN */
+.loading-screen {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #fafbfc;
+}
+ 
+.loading-content {
+  text-align: center;
+}
+ 
+.loading-title {
+  font-size: 28px;
+  color: #5a6ee6;
+  margin-bottom: 30px;
+  font-weight: 100;
+}
+ 
+.loading-text {
+  font-size: 20px;
+  color: #222;
+  margin-bottom: 18px;
+}
+ 
+ 
+.loader {
+  margin-top: 42px;
+  display: inline-block;
+  position: relative;
+  width: 90px;
+  height: 90px;
+}
+.loader div {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #222;
+  border-radius: 40%;
+  animation: loader-bounce 1.2s linear infinite;
+}
+.loader div:nth-child(1)  { left: 40px; top: 10px;  animation-delay: 0s; }
+.loader div:nth-child(2)  { left: 55px; top: 13px;  animation-delay: 0.1s; }
+.loader div:nth-child(3)  { left: 65px; top: 23px;  animation-delay: 0.2s; }
+.loader div:nth-child(4)  { left: 70px; top: 37px;  animation-delay: 0.3s; }
+.loader div:nth-child(5)  { left: 67px; top: 52px;  animation-delay: 0.4s; }
+.loader div:nth-child(6)  { left: 57px; top: 63px;  animation-delay: 0.5s; }
+.loader div:nth-child(7)  { left: 42px; top: 67px;  animation-delay: 0.6s; }
+.loader div:nth-child(8)  { left: 27px; top: 63px;  animation-delay: 0.7s; }
+.loader div:nth-child(9)  { left: 17px; top: 52px;  animation-delay: 0.8s; }
+.loader div:nth-child(10) { left: 13px; top: 37px;  animation-delay: 0.9s; }
+.loader div:nth-child(11) { left: 17px; top: 23px;  animation-delay: 1.0s; }
+.loader div:nth-child(12) { left: 27px; top: 13px;  animation-delay: 1.1s; }
+@keyframes loader-bounce {
+  0%, 100% { transform: scale(0); }
+  18%, 82% { transform: scale(0); }
+  50% { transform: scale(1.2); }
+}
+ 
+/* BREAK SCREEN */
+.break-screen {
+  display: none;
+    font-family: 'Roboto', Arial, sans-serif;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100vh;
+  background: #1e1e1e;
+  position: relative;
+  width: 100vw;
+}
+ 
+.break-left {
+    height: 100vh;
+    width: 50vw;
+flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+ 
+.break-timer-box {
+  background: transparent;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  padding: 12px 34px 12px 34px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+ 
+.break-timer-label {
+  color: #fff;
+  font-size: 19px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 8px;
+  letter-spacing: 0.01em;
+}
+ 
+.break-timer-value {
+  color: #fff;
+  font-size: 72px;
+  font-weight: 600;
+  font-family: 'Roboto Mono', 'Roboto', monospace;
+  text-align: center;
+  margin-bottom: 0;
+  line-height: 1.1;
+}
+ 
+.break-right {
+  display: flex;
+  height: 100vh;
+      width: 50vw;
+  flex: 1;
+  color: #fff; 
+    align-items: center;
+ 
+}
+.break-right1{
+  max-width: 380px;
+  margin-left: 0;
+ 
+}
+ 
+.break-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 22px;
+  line-height: 1.1;
+}
+ 
+.break-desc {
+  font-size: 17px;
+  margin-bottom: 28px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+ 
+.break-hr {
+  border: 0;
+  border-top: 2px solid #aaa;
+  margin: 32px 0 32px 0;
+}
+ 
+.break-subtitle {
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 22px;
+  line-height: 1.2;
+}
+ 
+.break-note {
+  font-size: 17px;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+ 
+.break-note b {
+  font-weight: 700;
+}
+ 
+.break-rules-title {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+ 
+.break-rules-list {
+  font-size: 17px;
+  margin-left: 20px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.break-rules-list li{
+margin-bottom: 10px;
+  }
+ 
+.break-author {
+  position: fixed;
+  left: 40px;
+  bottom: 40px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+  opacity: 0.85;
+  letter-spacing: 0.01em;
+  z-index: 10;
+}
+        .top-bar1 {
+            background: #fff;
+            padding: 10px 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 15px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+        }
+ 
+        .top-bar1 span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #272827;
+        }
+.gg{
+    width: 100vw;       /* ширина во весь экран */
+    height: 100vh;      /* высота во весь экран */
+    object-fit: cover;  /* обрезать и заполнить пространство */
+    object-position: top center; /* начинать от верхнего центра */
+    display: block;     /* убрать пробелы вокруг картинки */
+}
+.split-panel.single-panel {
+    grid-template-columns: 1fr;
+}
+ 
+.split-panel.single-panel #leftPanel,
+.split-panel.single-panel #divider {
+    display: none;
+}
+ 
+.split-panel.single-panel #rightPanel {
+    width: 100%;
+    padding: 55px 120px 30px 120px;         /* при необходимости подберите отступы */
+}
+ 
+.single-panel .question-graphic {
+    display: block;
+    max-width: 320px;         /* ограничиваем ширину графика */
+    width: 100%;
+    margin: 0 auto 24px;
+}
+ 
+.single-panel .question-text {
+    margin-top: 12px;
+}
+.free-response-box {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 15px;
+    font-family: "Times New Roman", Times, serif;
+    align-items: flex-start;
+}
+ 
+.free-response-input {
+  font-family: "Times New Roman", Times, serif;
+    width: 100px;
+    height: 55px;
+    font-size: 22px;
+    border: 1px solid #1e1e1e;
+    border-radius: 8px;
+    text-align: center;
+    outline: none;
+    letter-spacing: 3px;
+    border-bottom: 1px solid #1e1e1e; 
+  padding-bottom: 5px;
+     
+}
+.free-response-input-wrapper {
+    position: relative;
+    display: inline-block;
+}
+ 
+.free-response-input-wrapper::after {
+    content: "";
+    position: absolute;
+    width: 84px;
+    height: 0.5px;
+    background: #1e1e1e;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+}
+ 
+ 
+.answer-preview {
+  font-weight: 600;
+    font-size: 22px;
+}
+</style>
+ 
+ 
+        <div id="app">
+            <!-- LOADING SCREEN -->
+            <div id="loadingScreen" class="loading-screen">
+                <div class="loading-content">
+                    <div class="loading-title">This Module Is Over</div>
+                    <div class="loading-text">All your work has been saved.</div>
+                    <div class="loading-text">You’ll move on automatically in just a moment.</div>
+                    <div class="loading-text">Do not refresh this page or quit the app.</div>
+                    <div class="loader">
+                        <div></div><div></div><div></div><div></div><div></div><div></div>
+                        <div></div><div></div><div></div><div></div><div></div><div></div>
+                    </div>
+                </div>
+            </div>
+ 
+            <!-- BREAK SCREEN -->
+            <div id="breakScreen" class="break-screen">
+                <div class="break-left">
+                    <div class="break-timer-box">
+                        <div class="break-timer-label">Remaining Break Time:</div>
+                        <div id="breakTimer" class="break-timer-value">10:00</div>
+                    </div>
+                </div>
+                <div class="break-right">
+                    <div class="break-right1">
+                        <div class="break-title">Take a Break: Do Not Close Your Device</div>
+                        <div class="break-note">
+                            After the break, a <b>Resume Testing Now</b> button will appear and you'll start the next section.
+                        </div>
+                        <div class="break-rules-title">Follow these rules during the break:</div>
+                        <ol class="break-rules-list">
+                            <li>Do not disturb students who are still testing.</li>
+                            <li>Do not exit the app or close your laptop.</li>
+                            <li>Do not access phones, smartwatches, textbooks, notes, or the internet.</li>
+                            <li>Do not eat or drink near any testing device.</li>
+                            <li>Do not speak in the testing room; outside the room, do not discuss the exam with anyone.</li>
+                        </ol>
+ 
+                        <div class="break-author">Almas Nurlanuly</div>
+                    </div>
+                </div>
+            </div>
+ 
+            <!-- CONGRATS SCREEN -->
+                            <div id="congratsScreen" class="loading-screen">
+ 
+        <img class="gg" src="gg.png">
+            </div>
+ 
+            <!-- Top Bar -->
+            <div class="top-bar">
+                <div class="sss">
+                    <div class="section-title">Section Title</div>
+                    <div class="directions-row">
+                        <div class="directions-dropdown">
+                            <button id="directionsBtn">Directions <span id="dir-arrow">
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                    <polyline points="4,11 9,16 14,11" stroke="#000" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round"></polyline>
+                                </svg>
+                            </span></button>
+                            <div class="dropdown-content" id="directionsContent">
+                                <div class="directions-modal">
+                                    <p>
+                                        The questions in this section address a number of important reading and writing skills. Each question includes one or more passages, which may include a table or graph. Read each passage and question carefully, and then choose the best answer to the question based on the passage(s).
+                                    </p>
+                                    <p>
+                                        All questions in this section are multiple-choice with four answer choices. Each question has a single best answer.
+                                    </p>
+                                    <button id="closeDirections">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+ 
+                <div class="timer-center">
+                    <span class="timer-value" id="timerValue">25:00</span>
+                    <img id="timerImg" src="" style="display:none; width:50px; height:50px;">
+                    <button id="hideTimerBtn">Hide</button>
+                </div>
+ 
+                <div class="top-actions">
+    <button id="highlightsBtn" class="top-action-btn">
+        <img class="y" src="y.png" width="37" height="17" alt="">
+        <img class="t" src="t.png" width="37" height="17" alt="">
+        Highlights & Notes
+    </button>
+ 
+    <button id="calculatorBtn" class="top-action-btn" style="display:none;">
+        <img class="y" src="calc1.png" width="17" height="19" alt="">
+        <img class="t" src="calc2.png" width="17" height="19" alt="">
+        Calculator
+    </button>
+ 
+    <button id="referenceBtn" class="top-action-btn" style="display:none;">
+        <img class="y" src="ref1.png" width="20" height="14" alt="">
+        <img class="t" src="ref2.png" width="20" height="14" alt="">
+        Reference
+    </button>
+                    <div class="more-menu">
+                        <button id="moreBtn">⋮
+                            <div style="font-size:12px; font-weight: 700;"> More </div>
+                        </button>
+                        <div class="more-dropdown" id="moreDropdown">
+                            <div>Help</div>
+                            <div>Shortcuts</div>
+                            <div>Assistive Technology</div>
+                            <div>Line Reader</div>
+                            <div>Save and Exit</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="practice-label-p"></div>
+            </div>
+ 
+            <!-- Review Panel -->
+            <div id="reviewPanel" style="display:none;">
+                <div class="review-header">
+                    <h1>Check Your Work</h1>
+                    <p>On test day, you won’t be able to move on to the next module until time expires.</p>
+                    <p>For these practice questions, you can click <b>Next</b> when you’re ready to move on.</p>
+                </div>
+                <div class="review-box">
+                    <div class="review-title-row">
+                        <span class="review-section-title">Section</span>
+                        <span class="review-legend">
+                            <span class="review-unanswered"></span> Unanswered
+                            <span class="review-flag">
+                                <svg width="50" height="50" viewBox="0 0 11 11" fill="none">
+                                    <path d="M3 2H11V12L7 9L3 12V2Z" fill="#ab2334"></path>
+                                </svg>
+                            </span> For Review
+                        </span>
+                    </div>
+                    <hr>
+                    <div class="review-grid"></div>
+                </div>
+            </div>
+ 
+            <!-- Main Split Panel -->
+            <div class="split-panel" id="splitPanel">
+                <div class="panel left-panel" id="leftPanel">
+                    <div class="passage"></div>
+                </div>
+                <div class="divider" id="divider"></div>
+                <div class="panel right-panel" id="rightPanel">
+                    <div class="panos">
+                        <div class="question-header">
+                            <span class="question-number">1</span>
+                            <label class="mrk">
+                                <svg id="markReview" class="checkbox-svg" viewBox="0 0 14 40">
+                                    <polyline points="0,11 14,11 14,32 7,25 0,32 0,11" stroke-linecap="round" stroke-linejoin="round"></polyline>
+                                </svg>
+                                <span class="mrk-text">Mark for Review</span>
+                            </label>
+                            <style>
+  /* Стили для SVG */
+  .checkbox-svg {
+    width: 25px;
+    height: 30px;
+    cursor: pointer;
+    stroke: black;
+    stroke-width: 1.5;
+    fill: none;
+ 
+  }
+ 
+ 
+  .checkbox-svg.active {
+    fill: #ab2334; /* фон при клике */
+  }
+.mrk{
+    cursor: pointer;
+display: flex;
+align-items: center;
+}
+  /* Стили для текста */
+  .mrk-text {
+font-size: 14px;
+font-weight: 400;
+  }
+ 
+  /* Hover для всей метки */
+  .mrk:hover .mrk-text {
+    font-weight: 600;
+  }
+  .mrk:hover .checkbox-svg {
+    fill: #D3D3D3;
+  }
+ 
+  /* Активное состояние SVG → подчёркивание текста */
+  .checkbox-svg.active + .mrk-text {
+    font-weight: 700;
+text-decoration: underline; 
+  }
+ 
+</style>
+ 
+<script>
+  const svgCheckbox = document.getElementById('markReview');
+ 
+  svgCheckbox.addEventListener('click', () => {
+    svgCheckbox.classList.toggle('active'); // переключаем активное состояние
+  });
+</script>
+                            <button id="abcBtn" class="abc-btn">
+                                <svg class="abc-svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                    <polyline class="pp" points="0,18 18,2" stroke="#000" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></polyline>
+                                    <polyline class="ppq" points="0,19 18,3" stroke="#fff" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></polyline>
+                                </svg>
+                                ABC
+                            </button>
+                        </div>
+                        <div class="question-text"></div>
+                        <div class="answers"></div>
+                    </div>
+                </div>
+            </div>
+ 
+            <!-- Bottom Bar -->
+            <div class="bottom-bar">
+                <span class="user-name">Almas Nurlanuly</span>
+                <div class="question-nav">
+                    <button id="questionNavBtn">Question 1 of 1
+                        <span id="nav-arrow">
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                <polyline points="3,15 9,9 15,15" stroke="#fff" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></polyline>
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="question-nav-popup" id="questionNavPopup" style="display:none;">
+                        <div class="popup-header">
+                            Section
+                            <button id="closeNavPopup">×</button>
+                        </div>
+                        <div class="popup-body">
+                            <div class="legend">
+                                <span class="current">
+                                    <svg width="16" height="16" viewBox="0 0 18 18" fill="none">
+                                        <circle cx="9" cy="9" r="8" stroke="#222" stroke-width="2"></circle>
+                                        <circle cx="9" cy="9" r="3" fill="#222"></circle>
+                                    </svg>
+                                </span> Current
+                                <span class="unanswered"></span> Unanswered
+                                <span class="review">
+                                    <svg width="50" height="50" viewBox="0 0 11 11" fill="none">
+                                        <path d="M3 2H11V12L7 9L3 12V2Z" fill="#ab2334"></path>
+                                    </svg>
+                                </span> For Review
+                            </div>
+                            <div class="question-grid"></div>
+                            <button class="review-page-btn" id="goToReviewBtn">Go to Review Page</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="btnn">
+                    <button class="back-btn" id="backBtn" style="display:none;">Back</button>
+                    <button class="next-btn" id="nextBtn">Next</button>
+                    <button id="reviewNextBtn" class="next-btn" style="display:none;">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+    <script>
+        /***********************
+         *  DATA DEFINITIONS
+         ***********************/
+        const readingModule1 = [
+            {
+                passage: `As Mexico’s first president from an Indigenous community, Benito Juarez became one of the most <b>______</b> figures in his country’s history: among the many significant accomplishments of his long tenure in office (1858–1872), Juarez consolidated the authority of the national government and advanced the rights of Indigenous peoples.`,
+                question: "Which choice completes the text with the most logical and precise word or phrase?",
+                answers: ["unpredictable", "important", "secretive", "ordinary"]
+            },
+            {
+                passage: `Artist Marilyn Dingle’s intricate, coiled baskets are ______ sweetgrass and palmetto palm. Following a Gullah technique that originated in West Africa, Dingle skillfully winds a thin palm frond around a bunch of sweetgrass with the help of a “sewing bone” to create the basket’s signature look that no factory can reproduce.`,
+                question: "Which choice completes the text with the most logical and precise word or phrase?",
+                answers: ["indicated by", "handmade from", "represented by", "collected with"]
+            },
+            {
+                passage: `<i>The Mule Bone</i>, a 1930 play written by Zora Neale Hurston and Langston Hughes, is perhaps the best-known of the few examples of ______ in literature. Most writers prefer working alone, and given that working together cost Hurston and Hughes their friendship, it is not hard to see why.`,
+                question: "Which choice completes the text with the most logical and precise word or phrase?",
+                answers: ["characterization", "interpretation", "collaboration", "commercialization"]
+            },
+            {
+                passage: `Diego Velázquez was the leading artist in the court of King Philip IV of Spain during the seventeenth century, but his influence was hardly ______ Spain: realist and impressionist painters around the world employed his techniques and echoed elements of his style.`,
+                question: "Which choice completes the text with the most logical and precise word or phrase?",
+                answers: ["derived from", "recognized in", "confined to", "repressed by"]
+            },
+            {
+                passage: `Researchers and conservationists stress that biodiversity loss due to invasive species is ______. For example, people can take simple steps such as washing their footwear after travel to avoid introducing potentially invasive organisms into new environments.`,
+                question: "Which choice completes the text with the most logical and precise word or phrase?",
+                answers: ["preventable", "undeniable", "common", "concerning"]
+            },
+            {
+                passage: `Companies are providing consumers with more opportunities to purchase customized products than ever before. Whether buying customized sneakers, jewelry, or clothing, consumers can participate in the design of products to meet their specific needs and tastes. In turn, companies profit too: studies have shown that consumers are willing to pay more and wait longer for a customized product. Still, it can be difficult for companies to offer customization while keeping costs low, as the standard methods of mass production may not be able to accommodate making a unique product each time.`,
+                question: "Which choice best describes the overall structure of the text?",
+                answers: [
+                    "It discusses several recent innovations in product manufacturing and then suggests some potential applications of those innovations.",
+                    "It describes a company’s recent success with new products and then explains multiple factors that may have contributed to that success.",
+                    "It introduces a trend in consumer products and then explains how the trend both benefits and poses a challenge to companies.",
+                    "It presents two contrasting product-marketing techniques and then provides examples of one of those techniques."
+                ]
+            },
+            {
+                passage: `The following text is from the 1924 poem “Cycle” by D’Arcy McNickle, who was a citizen of the Confederated Salish and Kootenai Tribes.<br><br>
+There shall be new roads wending,<br>
+A new beating of the drum—<br>
+Men’s eyes shall have fresh seeing,<br>
+Grey lives reprise their span—<br>
+But under the new sun’s being,<br>
+Completing what night began,<br>
+There’ll be the same backs bending,<br>
+The same sad feet shall drum—<br>
+When this night finds its ending<br>
+And day shall have come.....`,
+                question: "Which choice best states the main purpose of the text?",
+                answers: [
+                    "To consider how the repetitiveness inherent in human life can be both rewarding and challenging",
+                    "To question whether activities completed at one time of day are more memorable than those completed at another time of day",
+                    "To refute the idea that joy is a more commonly experienced emotion than sadness is",
+                    "To demonstrate how the experiences of individuals relate to the experiences of their communities"
+                ]
+            },
+            {
+                passage: `The north celestial pole (NCP)—the fixed point around which stars in the Northern Hemisphere (including the Sun) appear to rotate—is discernible only at night. Inspired by the navigational strategies of some insects and birds, researchers devised a method for locating the NCP in daytime using skylight polarization, which occurs as atmospheric particles scatter sunlight. A polarimetric camera captures images of polarization patterns, which rotate as the Sun’s position in the sky changes; temporal variances across images can then be used to determine an observer’s latitude and bearing relative to the NCP.`,
+                question: "Which choice best describes the overall structure of the text?",
+                answers: [
+                    "It illustrates how most navigational tools utilize the NCP, recounts how researchers discovered that certain animals are able to navigate without using the NCP, and then proposes that this discovery could be used to avoid problems in navigation associated with reliance on the NCP.",
+                    "It presents a celestial-based method of navigation, enumerates the comparative benefits of an alternative method used by certain animals that is based on an unrelated natural occurrence, and then indicates how researchers assessed the relative accuracy of the two methods.",
+                    "It explains how the NCP is typically located, emphasizes a key difference between how humans and certain animals use the NCP for navigation, and then suggests an alternative way of using the NCP to improve existing navigational instruments.",
+                    "It notes an obstacle to observing an astronomical phenomenon, mentions a navigational ability of certain animals that inspired a solution to that obstacle, and then explains how researchers used an optical device to mimic that ability."
+                ]
+            },
+            {
+                passage: `Culinary anthropologist Vertamae Smart-Grosvenor may be known for her decades of work in national public television and radio, but her book <i>Vibration Cooking: or, the Travel Notes of a Geechee Girl</i> is likely her most influential project. The 1970 book, whose title refers to Smart-Grosvenor’s roots in the Low Country of South Carolina, was unusual for its time. It combined memoir, recipes, travel writing, and social commentary and challenged notions about conventions of food and cooking. Long admired by many, the book and its author have shaped contemporary approaches to writing about cuisine.`,
+                question: "Which choice best describes the main idea of the text?",
+                answers: [
+                    "Smart-Grosvenor’s unconventional book <i>Vibration Cooking; or, the Travel Notes of a Geechee Girl</i> is an important contribution to food writing.",
+                    "Smart-Grosvenor held many different positions over her life, including reporter and food writer.",
+                    "Smart-Grosvenor’s groundbreaking book <i>Vibration Cooking; or, the Travel Notes of a Geechee Girl</i> didn’t receive the praise it deserved when it was first published in 1970.",
+                    "Smart-Grosvenor was a talented chef whose work inspired many people to start cooking for themselves."
+                ]
+            },
+            {
+                passage: `The following text is from William Shakespeare’s play <i>The Tempest</i>, first performed in 1611. Miranda has lived on an island with her father, Prospero, since she was three years old. Prospero has stated that Miranda likely does not remember anything other than her life on the island.<br><br>
+MIRANDA: ’Tis far off,<br>
+And rather like a dream than an assurance<br>
+That my remembrance warrants. Had I not<br>
+Four or five women once that tended me?<br><br>
+PROSPERO: Thou hadst, and more, Miranda. But how is it<br>
+That this lives in thy mind? What seest thou else<br>
+In the dark backward and abysm of time?<br>
+If thou remember’st ought ere thou camest here,<br>
+How thou camest here thou mayst.`,
+                question: "In the text, which point does Prospero most directly make about Miranda and her memories?",
+                answers: [
+                    "Miranda’s reminiscences about her early childhood have a melancholy quality that betrays her discontented view of her current circumstances.",
+                    "Miranda’s doubts about the accuracy of one recollection of a place other than the island are clouding her judgment and seem to be making her reluctant to explore her recollection of traveling to the island.",
+                    "Miranda’s ability to summon details of an experience she had before arriving on the island suggests that she may also be able to summon details of her arrival on the island.",
+                    "Miranda’s impression of a scene is vague because she is remembering a scenario she had daydreamed about as a child rather than a scenario that had occurred in reality."
+                ]
+            },
+            {
+                passage: `In a research paper, a student criticizes some historians of modern African politics, claiming that they have evaluated Patrice Lumumba, the first prime minister of what is now the Democratic Republic of the Congo, primarily as a symbol rather than in terms of his actions.`,
+                question: "Which quotation from a work by a historian would best illustrate the student’s claim?",
+                answers: [
+                    "“Lumumba is a difficult figure to evaluate due to the starkly conflicting opinions he inspired during his life and continues to inspire today.”",
+                    "“The available information makes it clear that Lumumba’s political beliefs and values were largely consistent throughout his career.”",
+                    "“Lumumba’s practical accomplishments can be passed over quickly; it is mainly as the personification of Congolese independence that he warrants scholarly attention.”",
+                    "“Many questions remain about Lumumba’s ultimate vision for an independent Congo; without new evidence coming to light, these questions are likely to remain unanswered.”"
+                ]
+            },
+            {
+                passage: `Researchers hypothesized that a decline in the population of dusky sharks near the mid-Atlantic coast of North America led to a decline in the population of eastern oysters in the region. Dusky sharks do not typically consume eastern oysters but do consume cownose rays, which are the main predators of the oysters.`,
+                question: "Which finding, if true, would most directly support the researchers’ hypothesis?",
+                answers: [
+                    "Declines in the regional abundance of dusky sharks’ prey other than cownose rays are associated with regional declines in dusky shark abundance.",
+                    "Eastern oyster abundance tends to be greater in areas with both dusky sharks and cownose rays than in areas with only dusky sharks.",
+                    "Consumption of eastern oysters by cownose rays in the region substantially increased before the regional decline in dusky shark abundance began.",
+                    "Cownose rays have increased in regional abundance as dusky sharks have decreased in regional abundance."
+                ]
+            },
+            {
+                passage: `The musical <i>Hadestown</i> was produced off-Broadway in New York in 2016. A revised version of the musical premiered on Broadway in 2019, in a larger production. In a review of the Broadway production, theater critic Jesse Green enthusiastically praised the musical’s storytelling. However, Green also explained that he had seen the earlier version of <i>Hadestown</i> in 2016 and had found the storytelling to be very confusing. This suggests that in Green’s view, ______`,
+                question: "Which choice most logically completes the text?",
+                answers: [
+                    "the 2016 version of <i>Hadestown</i> had fewer storytelling problems than the 2019 version did.",
+                    "<i>Hadestown</i> should have had a larger production in 2019 than it actually did.",
+                    "the 2019 version of <i>Hadestown</i> was less enjoyable than the 2016 version.",
+                    "<i>Hadestown</i> improved greatly between 2016 and its premiere on Broadway."
+                ]
+            },
+            {
+                passage: `If some artifacts recovered from excavations of the settlement of Kuulo Kataa, in modern Ghana, date from the thirteenth century CE, that may lend credence to claims that the settlement was founded before or around that time. There is other evidence, however, strongly supporting a fourteenth century CE founding date for Kuulo Kataa. If both the artifact dates and the fourteenth century CE founding date are correct, that would imply that ______`,
+                question: "Which choice most logically completes the text?",
+                answers: [
+                    "artifacts from the fourteenth century CE are more commonly recovered than are artifacts from the thirteenth century CE.",
+                    "the artifacts originated elsewhere and eventually reached Kuulo Kataa through trade or migration.",
+                    "Kuulo Kataa was founded by people from a different region than had previously been assumed.",
+                    "excavations at Kuulo Kataa may have inadvertently damaged some artifacts dating to the fourteenth century CE."
+                ]
+            },
+            {
+                passage: `Formed in 1967 to foster political and economic stability within the Asia-Pacific region, the Association of Southeast Asian Nations was originally made up of five members: Thailand, the Philippines, Singapore, Malaysia, and Indonesia. By the end of the 1990s, the organization ______ its initial membership.`,
+                question: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+                answers: ["has doubled", "had doubled", "doubles", "will double"]
+            },
+            {
+                passage: `Birds of many species ingest foods containing carotenoids, pigmented molecules that are converted into feather coloration. Coloration tends to be especially saturated in male birds’ feathers, and because carotenoids also confer health benefits, the deeply saturated colors generally serve to communicate what is known as an honest signal of a bird’s overall fitness to potential mates. However, ornithologist Allison J. Shultz and others have found that males in several species of the tanager genus <i>Ramphocelus</i> use microstructures in their feathers to manipulate light, creating the appearance of deeper saturation without the birds necessarily having to maintain a carotenoid-rich diet. These findings suggest that ______`,
+                question: "Which choice most logically completes the text?",
+                answers: [
+                    "individual male tanagers can engage in honest signaling without relying on carotenoid consumption.",
+                    "feather microstructures may be less effective than deeply saturated feathers for signaling overall fitness.",
+                    "scientists have yet to determine why tanagers have a preference for mates with colorful appearances.",
+                    "a male tanager’s appearance may function as a dishonest signal of the individual’s overall fitness."
+                ]
+            },
+            {
+                passage: `In 1930, Japanese American artist Chiura Obata depicted the natural beauty of Yosemite National Park in two memorable woodcuts: <i>Evening at Carl Inn</i> and <i>Lake Basin in the High Sierra</i>. In 2019, ______ exhibited alongside 150 of Obata’s other works in a single-artist show at the Smithsonian American Art Museum.`,
+                question: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+                answers: ["it was", "they were", "this was", "some were"]
+            },
+            {
+                passage: `The city of Pompeii, which was buried in ash following the eruption of Mount Vesuvius in 79 CE, continues to be studied by archaeologists. Unfortunately, as ______ attest, archaeological excavations have disrupted ash deposits at the site, causing valuable information about the eruption to be lost.`,
+                question: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+                answers: [
+                    "researchers, Roberto Scandone and Christopher Kilburn,",
+                    "researchers, Roberto Scandone and Christopher Kilburn",
+                    "researchers Roberto Scandone and Christopher Kilburn",
+                    "researchers Roberto Scandone, and Christopher Kilburn"
+                ]
+            },
+            {
+                passage: `Journalists have dubbed Gil Scott-Heron the “godfather of rap,” a title that has appeared in hundreds of articles about him since the 1990s. Scott-Heron himself resisted the godfather ______ feeling that it didn’t encapsulate his devotion to the broader African American blues music tradition as well as “bluesologist,” the moniker he preferred.`,
+                question: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+                answers: ["nickname, however", "nickname, however;", "nickname; however,", "nickname, however,"]
+            },
+            {
+                passage: `Over twenty years ago, in a landmark experiment in the psychology of choice, professor Sheena Iyengar set up a jam-tasting booth at a grocery store. The number of jams available for tasting ______ some shoppers had twenty-four different options, others only six. Interestingly, the shoppers with fewer jams to choose from purchased more jam.`,
+                question: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+                answers: ["varied:", "varied,", "varied, while", "varied while"]
+            },
+            {
+                passage: `Sociologist Todd Gitlin co-opted the term “recombinant,” normally used in reference to genetic engineering, to describe serialized television shows of the 1980s. Gitlin’s use of the term referenced TV studios’ practice of repackaging successful narrative formulas as new ______ even shows that varied only slightly from other shows still attracted sizeable audiences.`,
+                question: "Which choice completes the text so that it conforms to the conventions of Standard English?",
+                answers: ["content, in that era", "content; in that era,", "content in that era,", "content, in that era,"]
+            },
+            {
+                passage: `Although those who migrated to California in 1849 dreamed of finding gold nuggets in streambeds, the state’s richest deposits were buried deeply in rock, beyond the reach of individual prospectors. ______ by 1852, many had given up their fortune-hunting dreams and gone to work for one of the large companies capable of managing California’s complex mining operations.`,
+                question: "Which choice completes the text with the most logical transition?",
+                answers: ["Furthermore,", "Still,", "Consequently,", "Next,"]
+            },
+            {
+                passage: `In 1974, Mexican chemist Mario Molina and US chemist F. Sherwood Rowland discovered that chemicals called CFCs were harmful to the ozone layer. Their research was extremely influential in the fight against CFCs. ______ it laid the foundation for a 1987 treaty that phased out the use of CFCs across the globe.`,
+                question: "Which choice completes the text with the most logical transition?",
+                answers: ["Regardless,", "Specifically,", "However,", "Earlier,"]
+            },
+            {
+                passage: `While researching a topic, a student has taken the following notes:<br>
+<ul>
+<li>On January 3, 1959, Alaska became the 49th state to join the US.</li>
+<li>On August 21, 1959, Hawaii became the 50th state to join the US.</li>
+<li>A new 50-star US flag was unveiled the same day.</li>
+</ul>
+The student wants to emphasize the order in which Alaska and Hawaii became US states. Which choice most effectively uses relevant information from the notes to accomplish this goal?`,
+                question: "",
+                answers: [
+                    "Alaska, the 49th US state, became a state several months before Hawaii, the 50th state, did.",
+                    "On August 21, 1959, a new 50-star US flag was unveiled.",
+                    "The 49th and 50th states to join the US did so in the same year.",
+                    "The same day that Hawaii became a US state—August 21, 1959—a new US flag was unveiled."
+                ]
+            },
+            {
+                passage: `While researching a topic, a student has taken the following notes:<br>
+<ul>
+<li>Physicist Muluneh Abebe was working on a garment suited for both warm and cold conditions.</li>
+<li>He analyzed the emissivity, or ability to emit heat, of the materials he planned to use.</li>
+<li>Abebe found that reflective metal fibers emitted almost no heat and had an emissivity of 0.02.</li>
+<li>He found that silicon carbide fibers absorbed large amounts of heat and had an emissivity of 0.74.</li>
+<li>The amount of heat a material absorbs is equal to the amount it emits.</li>
+</ul>
+The student wants to contrast the emissivity of reflective metal fibers with that of silicon carbide fibers. Which choice most effectively uses relevant information from the notes to accomplish this goal?`,
+                question: "",
+                answers: [
+                    "The ability of reflective metal fibers and silicon carbide fibers to emit heat was determined by an analysis of each material’s emissivity.",
+                    "The amount of heat a material absorbs is equal to the amount it emits, as evidenced in Abebe’s analyses.",
+                    "Though the reflective metal fibers and silicon carbide fibers had different rates of emissivity, Abebe planned to use both in a garment.",
+                    "Whereas the reflective metal fibers had an emissivity of just 0.02, the silicon carbide fibers absorbed large amounts of heat, resulting in an emissivity of 0.74."
+                ]
+            },
+            {
+                passage: `While researching a topic, a student has taken the following notes:<br>
+<ul>
+<li><i>Las sergas de Esplandián</i> was a novel popular in sixteenth-century Spain.</li>
+<li>The novel featured a fictional island inhabited solely by Black women and known as California.</li>
+<li>That same century, Spanish explorers learned of an “island” off the west coast of Mexico.</li>
+<li>They called it California after the island in the novel.</li>
+<li>The “island” was actually the peninsula now known as Baja California (“Lower California”), which lies to the south of the US state of California.</li>
+</ul>
+The student wants to emphasize the role a misconception played in the naming of a place. Which choice most effectively uses relevant information from the notes to accomplish this goal?`,
+                question: "",
+                answers: [
+                    "The novel <i>Las sergas de Esplandián</i> featured a fictional island known as California.",
+                    "To the south of the US state of California lies Baja California (“Lower California”), originally called California after a fictional place.",
+                    "In the sixteenth century, Spanish explorers learned of a peninsula off the west coast of Mexico and called it California.",
+                    "Thinking it was an island, Spanish explorers called a peninsula California after an island in a popular novel."
+                ]
+            },
+            {
+                passage: `While researching a topic, a student has taken the following notes:<br>
+<ul>
+<li>Most, but not all, of the Moon’s oxygen comes from the Sun, via solar wind.</li>
+<li>Cosmochemist Kentaro Terada from Osaka University wondered if some of the unaccounted-for oxygen could be coming from Earth.</li>
+<li>In 2008, he analyzed data from the Japanese satellite Kaguya.</li>
+<li>Kaguya gathered data about gases and particles it encountered while orbiting the Moon.</li>
+<li>Based on the Kaguya data, Terada confirmed his suspicion that Earth is sending oxygen to the Moon.</li>
+</ul>
+The student wants to emphasize the aim of the research study. Which choice most effectively uses relevant information from the notes to accomplish this goal?`,
+                question: "",
+                answers: [
+                    "As it orbited the Moon, the Kaguya satellite collected data that was later analyzed by cosmochemist Kentaro Terada.",
+                    "Before 2008, Kentaro Terada wondered if the Moon was receiving some of its oxygen from Earth.",
+                    "Cosmochemist Kentaro Terada set out to determine whether some of the Moon’s oxygen was coming from Earth.",
+                    "Kentaro Terada’s study determined that Earth is sending a small amount of oxygen to the Moon."
+                ]
+            }
+        ];
+ 
+        const readingModule2 = [
+  {
+    passage: `Predatory animals differ widely in how they ______ food for their young. Some leave dead prey nearby for their young to consume, some bring live prey to their young, and some feed their young directly from their own mouths.`,
+    question: `Which choice completes the text with the most logical and precise word or phrase?`,
+    answers: ["avoid", "guess", "provide", "describe"]
+  },
+  {
+    passage: `One challenge of generating electricity from ocean waves is that wave power isn’t ______; it varies in unpredictable ways that pose technological and planning problems for electricity generation.`,
+    question: `Which choice completes the text with the most logical and precise word or phrase?`,
+    answers: ["accidental", "confident", "expensive", "consistent"]
+  },
+  {
+    passage: `/* TODO: добавьте текст и варианты, когда будет доступен скрин вопроса 3 */`,
+    question: ``,
+    answers: []
+  },
+  {
+    passage: `In 1929 the <i>Atlantic Monthly</i> published several articles based on newly discovered letters allegedly exchanged between President Abraham Lincoln and a woman named Ann Rutledge. Historians were unable to _____ the authenticity of the letters, however, and quickly dismissed them as a hoax.`,
+    question: `Which choice completes the text with the most logical and precise word or phrase?`,
+    answers: ["validate", "interpret", "relate", "accommodate"]
+  },
+  {
+    passage: `In 2007, computer scientist Luis von Ahn was working on converting printed books into a digital format. He found that some words were distorted enough that digital scanners couldn’t recognize them, but most humans could easily read them. Based on that finding, von Ahn invented a simple security test...`,
+    question: `Which choice best states the main purpose of the text?`,
+    answers: [
+      "To discuss von Ahn’s invention of reCAPTCHA",
+      "To explain how digital scanners work",
+      "To call attention to von Ahn’s book-digitizing project",
+      "To indicate how popular reCAPTCHA is"
+    ]
+  },
+  {
+    passage: `The following text is adapted from Cynthia Kadohata’s 2004 novel <i>Kira-Kira</i>...`,
+    question: `Which choice best describes the function of the underlined sentence?`,
+    answers: [
+      "It lists the kinds of topics Uncle Katsuhisa enjoys discussing.",
+      "It suggests that Uncle Katsuhisa dislikes meeting new people.",
+      "It contrasts Uncle Katsuhisa with the narrator’s father.",
+      "It describes a conversation between the narrator and the narrator’s father."
+    ]
+  },
+  {
+    passage: `<b>Text 1</b> ... <b>Text 2</b> ...`,
+    question: `Based on the texts, what would the paleontologists in Text 2 most likely say about the researchers’ initial thought in Text 1?`,
+    answers: [
+      "It is understandable because the fossil does look like it could be related to birds, even though O. khaungraae is probably a lizard.",
+      "It is confusing because it isn’t clear what caused the researchers to think that O. khaungraae might be related to birds.",
+      "It is flawed because the researchers mistakenly assumed that O. khaungraae must be a lizard.",
+      "It is reasonable because the O. khaungraae skull is about the same size as the skull of the second fossil but is shaped differently."
+    ]
+  },
+  {
+    passage: `The following text is adapted from Oscar Wilde’s 1891 novel <i>The Picture of Dorian Gray</i>...`,
+    question: `According to the text, what is true about Dorian?`,
+    answers: [
+      "He wants to know Hallward’s opinion of the portrait.",
+      "He is delighted by what he sees in the portrait.",
+      "He prefers portraits to other types of paintings.",
+      "He is uncertain of Hallward’s talent as an artist."
+    ]
+  },
+  {
+    passage: `The following text is adapted from Jane Austen’s 1811 novel <i>Sense and Sensibility</i>...`,
+    question: `According to the text, what is true about Elinor?`,
+    answers: [
+      "Elinor often argues with her mother but fails to change her mind.",
+      "Elinor can be overly sensitive with regard to family matters.",
+      "Elinor thinks her mother is a bad role model.",
+      "Elinor is remarkably mature for her age."
+    ]
+  },
+  {
+    passage: `Utah is home to Pando, a colony of about 47,000 quaking aspen trees...`,
+    question: `According to the text, why are ecologists worried about Pando?`,
+    answers: [
+      "It isn’t growing at the same rate it used to.",
+      "It isn’t producing young trees anymore.",
+      "It can’t grow into new areas because it is blocked by fences.",
+      "Its root system can’t support many more new trees."
+    ]
+  },
+  {
+    passage: `<b>Video Game Availability by Initial Release Years</b> (таблица)...`,
+    question: `Which choice most effectively uses data from the table to complete the statement?`,
+    answers: ["2000–2004.", "1995–1999.", "1970–1974.", "1985–1989."]
+  },
+  {
+    passage: `<b>Depths at Which Four Deep-Sea Fish Species Live</b> (таблица)...`,
+    question: `Based on the information in the table, at what depth does the southern stoplight loosejaw live?`,
+    answers: [
+      "More than 2,000 meters below the surface",
+      "150 to 400 meters below the surface",
+      "500 to 2,000 meters below the surface",
+      "250 to 500 meters below the surface"
+    ]
+  },
+  {
+    passage: `<i>O Pioneers!</i> is a 1913 novel by Willa Cather...`,
+    question: `Which quotation from <i>O Pioneers!</i> most effectively illustrates the claim?`,
+    answers: [
+      "“She had never known before how much the country meant to her...”",
+      "“Alexandra talked to the men about their crops...”",
+      "“Alexandra drove off alone...”",
+      "“It was Alexandra who read the papers...”"
+    ]
+  },
+  {
+    passage: `<b>Maximum Height of Maple Trees When Fully Grown</b> (таблица)...`,
+    question: `Which choice most effectively uses data from the table to complete the text?`,
+    answers: ["silver maple.", "sugar maple.", "red maple.", "Norway maple."]
+  },
+  {
+    passage: `In his 1963 exhibition <i>Exposition of Music—Electronic Television</i>...`,
+    question: `Which choice completes the text so that it conforms to the conventions of Standard English?`,
+    answers: ["will be", "had been", "was", "is"]
+  },
+  {
+    passage: `In the historical novel <i>The Surrender Tree</i>...`,
+    question: `Which choice completes the text so that it conforms to the conventions of Standard English?`,
+    answers: ["tells", "told", "is telling", "to tell"]
+  },
+  {
+    passage: `The classic children’s board game Chutes and Ladders...`,
+    question: `Which choice completes the text so that it conforms to the conventions of Standard English?`,
+    answers: ["allows", "are allowing", "have allowed", "allow"]
+  },
+  {
+    passage: `In winter, the diets of Japanese macaques...`,
+    question: `Which choice completes the text so that it conforms to the conventions of Standard English?`,
+    answers: ["forces", "to force", "forcing", "forced"]
+  },
+  {
+    passage: `The Alvarez theory, developed in 1980...`,
+    question: `Which choice completes the text so that it conforms to the conventions of Standard English?`,
+    answers: ["out but", "out, but", "out", "out,"]
+  },
+  {
+    passage: `In the 1950s, a man named Joseph McVicker...`,
+    question: `Which choice completes the text so that it conforms to the conventions of Standard English?`,
+    answers: ["suggested", "suggests", "had suggested", "was suggesting"]
+  },
+  {
+    passage: `The term “retroflex” derives from Latin...`,
+    question: `Which choice completes the text so that it conforms to the conventions of Standard English?`,
+    answers: ["rare and", "rare,", "rare", "rare;"]
+  },
+  {
+    passage: `There are three basic steps you should follow when planning a scientific inquiry...`,
+    question: `Which choice completes the text with the most logical transition?`,
+    answers: ["Therefore,", "Instead,", "For example,", "Second,"]
+  },
+  {
+    passage: `In 1933, the Twentieth Amendment to the US Constitution was ratified...`,
+    question: `Which choice completes the text with the most logical transition?`,
+    answers: ["Instead,", "For instance,", "Specifically,", "In addition,"]
+  },
+  {
+    passage: `At two weeks old, the time their critical socialization period begins, wolves can smell but cannot yet see or hear...`,
+    question: `Which choice completes the text with the most logical transition?`,
+    answers: ["in other words,", "for instance,", "by contrast,", "accordingly,"]
+  },
+  {
+    passage: `Some members of the US Supreme Court have resisted calls to televise the court’s oral arguments...`,
+    question: `Which choice completes the text with the most logical transition?`,
+    answers: ["However,", "Additionally,", "In comparison,", "For example,"]
+  },
+  {
+    passage: `Roughly once an hour, a torrent of boiling water shoots up 100 feet or more from Yellowstone’s Old Faithful geyser...`,
+    question: `Which choice completes the text with the most logical transition?`,
+    answers: ["Thus,", "Specifically,", "Still,", "In other words,"]
+  },
+  {
+    passage: `While researching a topic, a student has taken the following notes... (Arches National Park, infilling technique)`,
+    question: `The student wants to explain an advantage of the infilling technique. Which choice most effectively uses relevant information from the notes to accomplish this goal?`,
+    answers: [
+      "To remove carvings from sandstone arches ... power grinding is not always feasible.",
+      "Filling in carvings with ground sandstone and a bonding agent is less invasive ...",
+      "Park rangers can use a power grinding technique ...",
+      "As methods for removing carvings ... power grinding and infilling differ in their level of invasiveness."
+    ]
+  }
+];
+ 
+        const mathModule1 = [
+  {
+    layout: "single",
+    passage: `<img src="graph1.png" class="question-graphic" alt="">`,
+    question: `What is the y-intercept of the graph shown?`,
+    answers: ["(-8, 0)", "(-6, 0)", "(0, 6)", "(0, 8)"]
+  },
+  {
+    layout: "single",
+    passage: `<img src="mq2.png" style="max-width: 635px" alt="">`,
+    answers: ["49", "52", "57", "84"]
+  },
+  {
+    layout: "single",
+    passage: `A producer is creating a video with a length of 70 minutes. Which equation represents this situation, where x represents the number of 1-minute segments and y represents the number of 3-minute segments?`,
+    answers: ["4xy = 70", "4(x + y) = 70", "3x + y = 70", "x + 3y = 70"]
+  },
+  {
+    layout: "single",
+    question: `A bowl contains 20 ounces of water. When the bowl is uncovered, the amount of water in the bowl decreases by 1 ounce every 4 days. If 9 ounces of water remain in this bowl, for how many days has it been uncovered?`,
+    answers: ["3", "7", "36", "44"]
+  },
+  {
+    layout: "single",
+    passage: `<img src="mq5.png" style="max-width: 420px; display: block; margin: 0 auto 10px auto;" alt="">`,
+    question: `Each of the dot plots shown represents the number of glue sticks brought in by each student for two classes, class A and class B. Which statement best compares the standard deviations of the numbers of glue sticks brought in by each student for these two classes?`,
+    answers: [
+      "The standard deviation of the number of glue sticks brought in by each student for class A is less than the standard deviation of the number of glue sticks brought in by each student for class B.",
+      "The standard deviation of the number of glue sticks brought in by each student for class A is equal to the standard deviation of the number of glue sticks brought in by each student for class B.",
+      "The standard deviation of the number of glue sticks brought in by each student for class A is greater than the standard deviation of the number of glue sticks brought in by each student for class B.",
+      "There is not enough information to compare these standard deviations."
+    ]
+  },
+  {
+    layout: "single",
+    passage: `Which expression is equivalent to (7x³ + 7x) − (6x³ − 3x)?`,
+    question: ``,
+    answers: ["x³ + 10x", "-13x³ + 10x", "-13x³ + 4x", "x³ + 4x"]
+  },
+  {
+    layout: "single",
+    passage: `<img src="mq7.png" style="max-width: 635px" alt="">`,
+    question: ``,
+    answers: ["36", "45", "72", "108"]
+  },
+  {
+    layout: "single",
+    passage: `<img src="mq8.png" style="max-width: 170px;  display: block; margin: 0 auto 10px auto; " alt="">`,
+    question: `What is one of the solutions to the given equation?`,
+    answers: ["-4", "0", "3", "5"]
+  },
+  {
+    passage: `<img src="mq9.png" style="max-width: 640px;  justify-content: center; " alt="">`,
+    question: `A chemist combines water and acetic acid to make a mixture with a volume of 56 milliliters (mL). The volume of acetic acid in the mixture is 10 mL. What is the volume of water, in mL, in the mixture? (Assume that the volume of the mixture is the sum of the volumes of water and acetic acid before they were mixed.)`,
+    answers: [] // свободный ответ: 46
+  },
+  {
+    layout: "single",
+    passage: `A distance of 354 furlongs is equivalent to how many feet?`,
+    question: `(1 furlong = 220 yards, 1 yard = 3 feet)`,
+    answers: ["306", "402", "25,960", "233,640"]
+  },
+  {
+    layout: "single",
+    passage: `<img src="mq11.png" style="max-width: 100px;  display: block; margin: 0 auto 10px auto; " alt="">`,
+    question: `At how many points do the graphs of the given equations intersect in the xy-plane?`,
+    answers: ["Zero", "Exactly one", "Exactly two", "Infinitely many"]
+  },
+  {
+    passage: `<img src="mq9.png" style="max-width: 640px;  justify-content: center; " alt="">`,
+    question: `13 is p% of 25. What is the value of p?`,
+    answers: [] // свободный ответ: 52
+  },
+  {
+    passage: `<img src="mq9.png" style="max-width: 640px;  justify-content: center; " alt="">`,
+    question: `The function f(t) = 60,000(2)sup>t</sup> gives the number of bacteria in a population t minutes after an initial observation. How much time, in minutes, does it take for the number of bacteria in the population to double?`,
+    answers: [] // свободный ответ: 410
+  },
+  {
+    layout: "single",
+    passage: `Each year, the value of an investment increases by 0.49\% of its value the previous year.
+Which of the following functions best models how the value of the investment changes over time?`,
+    answers: [
+      "Decreasing exponential",
+      "Decreasing linear",
+      "Increasing exponential",
+      "Increasing linear"
+    ]
+  },
+  {
+    passage: `<img src="mq9.png" style="max-width: 640px;  justify-content: center; " alt="">`,
+    question: `A circle in the xy-plane has a diameter with endpoints (2, 4) and (2, 14). An equation of this circle is (x - 2)<sup>2</sup> + (y - 9)<sup>2</sup> = r<sup>2</sup>, where r is a positive constant. What is the value of r?`,
+    answers: []
+  },
+  {
+    layout: "single",
+    passage: `In right triangle RST, the sum of the measures of angle R and angle S is 90 degrees. The value of sin(R) is 15. What is the value of cos(S)?`,
+    answers: [      
+      "4",
+      "1",
+      "15",
+      "0"] // свободный ответ: 5
+  },
+  {
+    layout: "single",
+    passage: `<img src="mq17.png" style="max-width: 97px;  display: block; margin: 0 auto 10px auto; " alt="">`,
+    question: `The given equation relates the distinct positive numbers p, k, and j. Which equation correctly expresses 4j + 9 in terms of p and k?`,
+    answers: [
+    "4j + 9 = k", 
+    "4j + 9 = p",
+    "4j + 9 = k - p", 
+    "4j + 9 = 6p"]
+  },
+  {
+    layout: "single",
+    question: `A bowl contains 20 ounces of water. When the bowl is uncovered, the amount of water in the bowl decreases by 1 ounce every 4 days. If 9 ounces of water remain in this bowl, for how many days has it been uncovered?`,
+    answers: ["3", "7", "36", "44"]
+  },
+  {
+    passage: `<img src="mq9.png" style="max-width: 640px;  justify-content: center; " alt="">`,
+    question: `Line l is defined by 3y + 12x = 5. Line n is perpendicular to line l in the xy-plane. What is the slope of line n?`,
+    answers: [] // свободный ответ: 9
+  },
+  {
+    layout: "single",
+    passage: `<img src="mq20.png" style="max-width: 230px;  display: block; margin: 0 auto 10px auto; " alt="">`,
+    question: `In the given equation, d and g are unique positive constants. When the equation is graphed in the xy-plane, how many distinct x-intercepts does the graph have?`,
+    answers: ["4", "3", "2", "1"]
+  },
+  {
+    layout: "single",
+    passage: `For the exponential function f, the value of f(1) is k, where k is a constant. Which of the following equivalent forms of the function f shows the value of k as the coefficient or the base?`,
+    answers: [
+      "f(x) = 50(1.6)<sup>x+1</sup>",
+      "f(x) = 80(1.6)<sup>x</sup>",
+      "f(x) = 128(1.6)<sup>x-1</sup>",
+      "f(x) = 204.8(1.6)<sup>x-2</sup>"
+    ]
+  },
+  {
+    layout: "single",
+    passage: `<img src="mq22.png" style="max-width: 170px;  display: block; margin: 0 auto 10px auto; " alt="">`,
+    question: `The function g is defined by g(x) = f(x+5). For what value of x does g(x) reach its minimum`,
+    answers: ["-13", "-8", "-5", "-3"]
+  }
+];
+ 
+        const mathModule2 = [
+  {
+    layout: "single",
+    passage: `<img src="graph1.png" class="question-graphic" alt="">`,
+    question: `What is the y-intercept of the graph shown?`,
+    answers: ["(-8, 0)", "(-6, 0)", "(0, 6)", "(0, 8)"]
+  },
+  {
+    layout: "single",
+    passage: `<img src="mq2.png" style="max-width: 635px" alt="">`,
+    answers: ["49", "52", "57", "84"]
+  },
+  {
+    layout: "single",
+    passage: `A producer is creating a video with a length of 70 minutes. Which equation represents this situation, where x represents the number of 1-minute segments and y represents the number of 3-minute segments?`,
+    answers: ["4xy = 70", "4(x + y) = 70", "3x + y = 70", "x + 3y = 70"]
+  },
+  {
+    layout: "single",
+    question: `A bowl contains 20 ounces of water. When the bowl is uncovered, the amount of water in the bowl decreases by 1 ounce every 4 days. If 9 ounces of water remain in this bowl, for how many days has it been uncovered?`,
+    answers: ["3", "7", "36", "44"]
+  },
+  {
+    layout: "single",
+    passage: `<img src="mq5.png" style="max-width: 420px; display: block; margin: 0 auto 10px auto;" alt="">`,
+    question: `Each of the dot plots shown represents the number of glue sticks brought in by each student for two classes, class A and class B. Which statement best compares the standard deviations of the numbers of glue sticks brought in by each student for these two classes?`,
+    answers: [
+      "The standard deviation of the number of glue sticks brought in by each student for class A is less than the standard deviation of the number of glue sticks brought in by each student for class B.",
+      "The standard deviation of the number of glue sticks brought in by each student for class A is equal to the standard deviation of the number of glue sticks brought in by each student for class B.",
+      "The standard deviation of the number of glue sticks brought in by each student for class A is greater than the standard deviation of the number of glue sticks brought in by each student for class B.",
+      "There is not enough information to compare these standard deviations."
+    ]
+  },
+  {
+    layout: "single",
+    passage: `Which expression is equivalent to (7x³ + 7x) − (6x³ − 3x)?`,
+    question: ``,
+    answers: ["x³ + 10x", "-13x³ + 10x", "-13x³ + 4x", "x³ + 4x"]
+  },
+  {
+    layout: "single",
+    passage: `<img src="mq7.png" style="max-width: 635px" alt="">`,
+    question: ``,
+    answers: ["36", "45", "72", "108"]
+  },
+  {
+    layout: "single",
+    passage: `<img src="mq8.png" style="max-width: 170px;  display: block; margin: 0 auto 10px auto; " alt="">`,
+    question: `What is one of the solutions to the given equation?`,
+    answers: ["-4", "0", "3", "5"]
+  },
+  {
+    passage: `<img src="mq9.png" style="max-width: 640px;  justify-content: center; " alt="">`,
+    question: `A chemist combines water and acetic acid to make a mixture with a volume of 56 milliliters (mL). The volume of acetic acid in the mixture is 10 mL. What is the volume of water, in mL, in the mixture? (Assume that the volume of the mixture is the sum of the volumes of water and acetic acid before they were mixed.)`,
+    answers: [] // свободный ответ: 46
+  },
+  {
+    layout: "single",
+    passage: `A distance of 354 furlongs is equivalent to how many feet?`,
+    question: `(1 furlong = 220 yards, 1 yard = 3 feet)`,
+    answers: ["306", "402", "25,960", "233,640"]
+  },
+  {
+    layout: "single",
+    passage: `<img src="mq11.png" style="max-width: 100px;  display: block; margin: 0 auto 10px auto; " alt="">`,
+    question: `At how many points do the graphs of the given equations intersect in the xy-plane?`,
+    answers: ["Zero", "Exactly one", "Exactly two", "Infinitely many"]
+  },
+  {
+    passage: `<img src="mq9.png" style="max-width: 640px;  justify-content: center; " alt="">`,
+    question: `13 is p% of 25. What is the value of p?`,
+    answers: [] // свободный ответ: 52
+  },
+  {
+    passage: `<img src="mq9.png" style="max-width: 640px;  justify-content: center; " alt="">`,
+    question: `The function f(t) = 60,000(2)sup>t</sup> gives the number of bacteria in a population t minutes after an initial observation. How much time, in minutes, does it take for the number of bacteria in the population to double?`,
+    answers: [] // свободный ответ: 410
+  },
+  {
+    layout: "single",
+    passage: `Each year, the value of an investment increases by 0.49\% of its value the previous year.
+Which of the following functions best models how the value of the investment changes over time?`,
+    answers: [
+      "Decreasing exponential",
+      "Decreasing linear",
+      "Increasing exponential",
+      "Increasing linear"
+    ]
+  },
+  {
+    passage: `<img src="mq9.png" style="max-width: 640px;  justify-content: center; " alt="">`,
+    question: `A circle in the xy-plane has a diameter with endpoints (2, 4) and (2, 14). An equation of this circle is (x - 2)<sup>2</sup> + (y - 9)<sup>2</sup> = r<sup>2</sup>, where r is a positive constant. What is the value of r?`,
+    answers: []
+  },
+  {
+    layout: "single",
+    passage: `In right triangle RST, the sum of the measures of angle R and angle S is 90 degrees. The value of sin(R) is 15. What is the value of cos(S)?`,
+    answers: [      
+      "4",
+      "1",
+      "15",
+      "0"] // свободный ответ: 5
+  },
+  {
+    layout: "single",
+    passage: `<img src="mq17.png" style="max-width: 97px;  display: block; margin: 0 auto 10px auto; " alt="">`,
+    question: `The given equation relates the distinct positive numbers p, k, and j. Which equation correctly expresses 4j + 9 in terms of p and k?`,
+    answers: [
+    "4j + 9 = k", 
+    "4j + 9 = p",
+    "4j + 9 = k - p", 
+    "4j + 9 = 6p"]
+  },
+  {
+    layout: "single",
+    question: `A bowl contains 20 ounces of water. When the bowl is uncovered, the amount of water in the bowl decreases by 1 ounce every 4 days. If 9 ounces of water remain in this bowl, for how many days has it been uncovered?`,
+    answers: ["3", "7", "36", "44"]
+  },
+  {
+    passage: `<img src="mq9.png" style="max-width: 640px;  justify-content: center; " alt="">`,
+    question: `Line l is defined by 3y + 12x = 5. Line n is perpendicular to line l in the xy-plane. What is the slope of line n?`,
+    answers: [] // свободный ответ: 9
+  },
+  {
+    layout: "single",
+    passage: `<img src="mq20.png" style="max-width: 230px;  display: block; margin: 0 auto 10px auto; " alt="">`,
+    question: `In the given equation, d and g are unique positive constants. When the equation is graphed in the xy-plane, how many distinct x-intercepts does the graph have?`,
+    answers: ["4", "3", "2", "1"]
+  },
+  {
+    layout: "single",
+    passage: `For the exponential function f, the value of f(1) is k, where k is a constant. Which of the following equivalent forms of the function f shows the value of k as the coefficient or the base?`,
+    answers: [
+      "f(x) = 50(1.6)<sup>x+1</sup>",
+      "f(x) = 80(1.6)<sup>x</sup>",
+      "f(x) = 128(1.6)<sup>x-1</sup>",
+      "f(x) = 204.8(1.6)<sup>x-2</sup>"
+    ]
+  },
+  {
+    layout: "single",
+    passage: `<img src="mq22.png" style="max-width: 170px;  display: block; margin: 0 auto 10px auto; " alt="">`,
+    question: `The function g is defined by g(x) = f(x+5). For what value of x does g(x) reach its minimum`,
+    answers: ["-13", "-8", "-5", "-3"]
+  }
+];
+ 
+        const exam = [
+            {
+                name: "Section 1: Reading and Writing",
+                modules: [
+                    { name: "Module 1", questions: readingModule1 },
+                    { name: "Module 2", questions: readingModule2 }
+                ]
+            },
+            {
+                name: "Section 2: Math",
+                modules: [
+                    { name: "Module 1", questions: mathModule1 },
+                    { name: "Module 2", questions: mathModule2 }
+                ]
+            }
+        ];
+ 
+        const examState = exam.map(section => ({
+            modules: section.modules.map(module => ({
+                answers: Array(module.questions.length).fill(null),
+                review: Array(module.questions.length).fill(false),
+                strikes: module.questions.map(() => new Set())
+            }))
+        }));
+ 
+        /***********************
+         *  ELEMENT REFERENCES
+         ***********************/
+        const startScreen = document.getElementById('startScreen1');
+        const questionScreen = document.getElementById('questionScreen');
+        const codeInputs = document.querySelectorAll('.code-box1');
+        const startBtn = document.getElementById('startBtn1');
+ 
+        const topBar = document.querySelector('.top-bar');
+        const bottomBar = document.querySelector('.bottom-bar');
+        const splitPanel = document.querySelector('.split-panel');
+        const leftPanel = document.querySelector('.passage');
+        const questionTextEl = document.querySelector('.question-text');
+        const answersEl = document.querySelector('.answers');
+        const questionNumberEl = document.querySelector('.question-number');
+        const markReviewSvg = document.getElementById('markReview');
+        const abcBtn = document.getElementById('abcBtn');
+ 
+        const questionNavBtn = document.getElementById('questionNavBtn');
+        const questionNavPopup = document.getElementById('questionNavPopup');
+        const closeNavPopup = document.getElementById('closeNavPopup');
+        const questionGrid = document.querySelector('.question-grid');
+        const goToReviewBtn = document.getElementById('goToReviewBtn');
+ 
+        const reviewPanel = document.getElementById('reviewPanel');
+        const reviewTitle = document.querySelector('.review-section-title');
+        const reviewGrid = document.querySelector('.review-grid');
+        const nextBtn = document.getElementById('nextBtn');
+        const backBtn = document.getElementById('backBtn');
+        const reviewNextBtn = document.getElementById('reviewNextBtn');
+ 
+        const loadingScreen = document.getElementById('loadingScreen');
+        const breakScreen = document.getElementById('breakScreen');
+        const congratsScreen = document.getElementById('congratsScreen');
+        const breakTimerEl = document.getElementById('breakTimer');
+ 
+        const sectionTitle = document.querySelector('.section-title');
+        const timerValueEl = document.getElementById('timerValue');
+        const hideTimerBtn = document.getElementById('hideTimerBtn');
+ 
+        const directionsBtn = document.getElementById('directionsBtn');
+        const directionsContent = document.getElementById('directionsContent');
+        const closeDirections = document.getElementById('closeDirections');
+ 
+        const highlightsBtn = document.getElementById('highlightsBtn');
+        const moreBtn = document.getElementById('moreBtn');
+        const moreDropdown = document.getElementById('moreDropdown');
+ 
+        const divider = document.getElementById('divider');
+        const leftPanelWrap = document.getElementById('leftPanel');
+        const rightPanelWrap = document.getElementById('rightPanel');
+ 
+        /***********************
+         *  STATE VARIABLES
+         ***********************/
+        let currentSectionIdx = 0;
+        let currentModuleIdx = 0;
+        let currentQuestionIdx = 0;
+        let timerInterval = null;
+        let timerValue = 0;
+        let abcMode = false;
+        let timerHidden = false;
+        let breakInterval = null;
+        let breakTime = 600;
+        let nextModuleAfterBreak = null;
+ 
+        /***********************
+         *  UTILITY FUNCTIONS
+         ***********************/
+ 
+const calculatorBtn = document.getElementById('calculatorBtn');
+const referenceBtn = document.getElementById('referenceBtn');
+ 
+function toggleTopButtons() {
+    const section = getCurrentSection();
+    const isMath = section.name.toLowerCase().includes('math');
+ 
+    highlightsBtn.style.display = isMath ? 'none' : 'inline-flex';
+    calculatorBtn.style.display = isMath ? 'inline-flex' : 'none';
+    referenceBtn.style.display = isMath ? 'inline-flex' : 'none';
+}
+ 
+        function getCurrentSection() {
+            return exam[currentSectionIdx];
+        }
+ 
+        function getCurrentModule() {
+            return exam[currentSectionIdx].modules[currentModuleIdx];
+        }
+ 
+        function getCurrentModuleState() {
+            return examState[currentSectionIdx].modules[currentModuleIdx];
+        }
+ 
+        function hideAllScreens() {
+            loadingScreen.style.display = 'none';
+            breakScreen.style.display = 'none';
+            congratsScreen.style.display = 'none';
+        }
+ 
+        function resetTimerForModule() {
+            stopTimer();
+            const sectionName = getCurrentSection().name.toLowerCase();
+            timerValue = sectionName.includes('math') ? 35 * 60 : 32 * 60;
+            updateTimerDisplay();
+            startTimer();
+        }
+ 
+        function startTimer() {
+            stopTimer();
+            timerInterval = setInterval(() => {
+                if (timerValue > 0) {
+                    timerValue--;
+                    updateTimerDisplay();
+                } else {
+                    stopTimer();
+                }
+            }, 1000);
+        }
+ 
+        function stopTimer() {
+            if (timerInterval) {
+                clearInterval(timerInterval);
+                timerInterval = null;
+            }
+        }
+ 
+        function updateTimerDisplay() {
+            const minutes = Math.floor(timerValue / 60);
+            const seconds = timerValue % 60;
+            timerValueEl.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+        }
+ 
+        function startBreakTimer() {
+            stopBreakTimer();
+            breakTime = 10 * 60;
+            updateBreakTimerDisplay();
+            breakInterval = setInterval(() => {
+                if (breakTime > 0) {
+                    breakTime--;
+                    updateBreakTimerDisplay();
+                } else {
+                    resumeAfterBreak();
+                }
+            }, 1000);
+        }
+ 
+        function stopBreakTimer() {
+            if (breakInterval) {
+                clearInterval(breakInterval);
+                breakInterval = null;
+            }
+        }
+ 
+        function updateBreakTimerDisplay() {
+            const minutes = Math.floor(breakTime / 60);
+            const seconds = breakTime % 60;
+            breakTimerEl.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+        }
+ 
+        function updateSectionModuleLabels() {
+            const section = getCurrentSection();
+            const module = getCurrentModule();
+            sectionTitle.textContent = `Section ${currentSectionIdx + 1}, Module ${currentModuleIdx + 1}: ${section.name.split(': ').slice(-1)[0]}`;
+            reviewTitle.textContent = `Section ${currentSectionIdx + 1}, Module ${currentModuleIdx + 1}: ${section.name.split(': ').slice(-1)[0]}`;
+        }
+ 
+        function styleStatusButton(btn, moduleState, idx, isCurrent) {
+            const status = moduleState.review[idx]
+                ? 'review'
+                : moduleState.answers[idx]
+                    ? 'answered'
+                    : 'unanswered';
+ 
+            btn.style.background = '#fff';
+            btn.style.color = '#324dc7';
+            btn.style.border = '1.5px dashed #222';
+ 
+            if (status === 'answered') {
+                btn.style.background = '#324dc7';
+                btn.style.color = '#fff';
+                btn.style.border = '1.5px solid #324dc7';
+            }
+            if (status === 'review') {
+                btn.style.border = '1.5px solid #ab2334';
+            }
+            btn.style.boxShadow = isCurrent ? 'inset 0 0 0 2px #1e1e1e' : 'none';
+        }
+ 
+        function buildQuestionNavGrid() {
+            if (!questionGrid) return;
+            const module = getCurrentModule();
+            const moduleState = getCurrentModuleState();
+            questionGrid.innerHTML = '';
+            module.questions.forEach((_, idx) => {
+                const btn = document.createElement('button');
+                btn.className = 'q-btn';
+                btn.textContent = idx + 1;
+                styleStatusButton(btn, moduleState, idx, idx === currentQuestionIdx);
+                btn.onclick = () => {
+                    currentQuestionIdx = idx;
+                    renderQuestion(currentQuestionIdx);
+                    questionNavPopup.style.display = 'none';
+                };
+                questionGrid.appendChild(btn);
+            });
+        }
+ 
+        function buildReviewGrid() {
+            if (!reviewGrid) return;
+            const module = getCurrentModule();
+            const moduleState = getCurrentModuleState();
+            reviewGrid.innerHTML = '';
+            module.questions.forEach((_, idx) => {
+                const btn = document.createElement('button');
+                btn.className = 'review-q-btn';
+                btn.textContent = idx + 1;
+                styleStatusButton(btn, moduleState, idx, false);
+                btn.onclick = () => {
+                    hideReviewPanel();
+                    currentQuestionIdx = idx;
+                    renderQuestion(currentQuestionIdx);
+                };
+                reviewGrid.appendChild(btn);
+            });
+        }
+ 
+        function updateQuestionCounter() {
+            const module = getCurrentModule();
+            questionNavBtn.innerHTML = `Question ${currentQuestionIdx + 1} of ${module.questions.length} <span id="nav-arrow"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><polyline points="3,15 9,9 15,15" stroke="#fff" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>`;
+        }
+ 
+        function applyAbcMode() {
+            if (!answersEl) return;
+            answersEl.classList.toggle('abc-mode', abcMode);
+            document.querySelectorAll('.strike-btn').forEach(btn => {
+                if (abcMode) {
+                    btn.classList.remove('hide');
+                } else {
+                    btn.classList.add('hide');
+                    btn.classList.remove('undo');
+                    btn.querySelector('.strike-letter').textContent = btn.dataset.letter;
+                }
+            });
+        }
+ 
+        function renderQuestion(idx) {
+            const currentModule = getCurrentModule();
+            const moduleState = getCurrentModuleState();
+            const question = currentModule.questions[idx];
+    const single = question.layout === "single";
+splitPanel.classList.toggle("single-panel", single);
+    if (single) {
+        leftPanel.innerHTML = "";                       // левая панель не нужна
+        questionTextEl.innerHTML = `
+            ${question.passage ? `<div class="single-passage">${question.passage}</div>` : ""}
+            <div>${question.question || ""}</div>
+        `;
+    } else {
+        leftPanel.innerHTML = question.passage || "";
+        questionTextEl.innerHTML = question.question || "";
+    }
+ 
+            questionNumberEl.textContent = idx + 1;
+ 
+            answersEl.innerHTML = '';
+if (!question.answers || question.answers.length === 0) {
+    // свободный ответ
+    const box = document.createElement('div');
+    box.className = 'free-response-box';
+    const inputWrapper = document.createElement('div');
+inputWrapper.className = 'free-response-input-wrapper';
+ 
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.inputMode = 'numeric';
+    input.maxLength = 5;
+    input.className = 'free-response-input';
+    input.value = moduleState.answers[idx] || '';
+ 
+    const preview = document.createElement('div');
+    preview.className = 'answer-preview';
+    preview.innerHTML = `Answer Preview: <span>${input.value}</span>`;
+ 
+    input.addEventListener('input', () => {
+        input.value = input.value.replace(/[^0-9]/g, '').slice(0, 5);
+        moduleState.answers[idx] = input.value;
+        preview.querySelector('span').textContent = input.value;
+        buildQuestionNavGrid();
+    });
+ 
+    box.appendChild(input);
+        inputWrapper.appendChild(input);
+box.appendChild(inputWrapper);
+    box.appendChild(preview);
+    answersEl.appendChild(box);
+ 
+} else {
+    // прежний код с вариантами
+    question.answers.forEach((answer, i) => {
+        const letter = String.fromCharCode(65 + i);
+        const row = document.createElement('div');
+        row.className = 'answer-row';
+        row.setAttribute('data-letter', letter);
+ 
+        const answerDiv = document.createElement('div');
+        answerDiv.className = 'answer';
+        answerDiv.dataset.id = letter;
+        answerDiv.innerHTML = `<span class="answer-letter">${letter}</span><span class="answer-text">${answer}</span>`;
+ 
+        const strikeBtn = document.createElement('span');
+        strikeBtn.className = 'strike-btn hide';
+        strikeBtn.dataset.letter = letter;
+        strikeBtn.innerHTML = `<span class="strike-letter">${letter}</span>`;
+ 
+        row.appendChild(answerDiv);
+        row.appendChild(strikeBtn);
+        answersEl.appendChild(row);
+    });}
+ 
+            document.querySelectorAll('.answer').forEach(answerEl => {
+                const letter = answerEl.dataset.id;
+                answerEl.onclick = () => {
+                    moduleState.answers[idx] = letter;
+                    document.querySelectorAll('.answer').forEach(el => el.classList.remove('selected'));
+                    answerEl.classList.add('selected');
+                    updateQuestionCounter();
+                    buildQuestionNavGrid();
+                };
+                if (moduleState.answers[idx] === letter) {
+                    answerEl.classList.add('selected');
+                }
+            });
+ 
+            document.querySelectorAll('.strike-btn').forEach(btn => {
+                const letter = btn.dataset.letter;
+                const answerEl = [...document.querySelectorAll('.answer')].find(el => el.dataset.id === letter);
+                const strikeSet = moduleState.strikes[idx];
+                if (strikeSet.has(letter)) {
+                    answerEl.classList.add('striked');
+                    btn.classList.add('undo');
+                    btn.querySelector('.strike-letter').textContent = 'Undo';
+                }
+                btn.onclick = (e) => {
+                    e.stopPropagation();
+                    if (!answerEl) return;
+                    if (answerEl.classList.contains('striked')) {
+                        answerEl.classList.remove('striked');
+                        strikeSet.delete(letter);
+                        btn.classList.remove('undo');
+                        btn.querySelector('.strike-letter').textContent = letter;
+                    } else {
+                        answerEl.classList.add('striked');
+                        strikeSet.add(letter);
+                        btn.classList.add('undo');
+                        btn.querySelector('.strike-letter').textContent = 'Undo';
+                    }
+                };
+            });
+ 
+            applyAbcMode();
+ 
+ 
+            // Mark for Review
+const markReview = document.getElementById('markReview');
+markReview.onchange = () => {
+  document.querySelector('.question-header label').style.color = markReview.checked ? '#ff3b30' : '#222';
+};
+ 
+            backBtn.style.display = idx === 0 ? 'none' : '';
+            questionNavPopup.style.display = 'none';
+            updateQuestionCounter();
+            buildQuestionNavGrid();
+        }
+ 
+        function showReviewPanel() {
+            splitPanel.style.display = 'none';
+            reviewPanel.style.display = 'flex';
+            questionNavBtn.style.display = 'none';
+            nextBtn.style.display = 'none';
+            reviewNextBtn.style.display = 'flex';
+            backBtn.style.display = '';
+            buildReviewGrid();
+        }
+ 
+        function hideReviewPanel() {
+            reviewPanel.style.display = 'none';
+            splitPanel.style.display = 'flex';
+            questionNavBtn.style.display = '';
+            reviewNextBtn.style.display = 'none';
+            nextBtn.style.display = 'flex';
+        }
+ 
+        function determineNextModule() {
+            const section = getCurrentSection();
+            if (currentModuleIdx < section.modules.length - 1) {
+                return { sectionIdx: currentSectionIdx, moduleIdx: currentModuleIdx + 1 };
+            }
+            if (currentSectionIdx < exam.length - 1) {
+                return { sectionIdx: currentSectionIdx + 1, moduleIdx: 0 };
+            }
+            return null;
+        }
+ 
+        function proceedAfterReview() {
+            const module = getCurrentModule();
+            const moduleState = getCurrentModuleState();
+ 
+            // ensure nav grid updates before leaving
+            buildQuestionNavGrid();
+ 
+            const needsBreak = currentSectionIdx === 0 && currentModuleIdx === exam[currentSectionIdx].modules.length - 1;
+            const nextTarget = determineNextModule();
+ 
+            if (!nextTarget) {
+                showLoadingScreen(() => showCongratsScreen());
+                return;
+            }
+ 
+            showLoadingScreen(() => {
+                if (needsBreak) {
+                    nextModuleAfterBreak = nextTarget;
+                    showBreakScreen();
+                } else {
+                    startModule(nextTarget.sectionIdx, nextTarget.moduleIdx);
+                }
+            });
+        }
+ 
+        function showLoadingScreen(callback) {
+            stopTimer();
+            hideAllScreens();
+            questionNavPopup.style.display = 'none';
+            reviewPanel.style.display = 'none';
+            splitPanel.style.display = 'none';
+            topBar.style.display = 'none';
+            bottomBar.style.display = 'none';
+            loadingScreen.style.display = 'flex';
+ 
+            setTimeout(() => {
+                loadingScreen.style.display = 'none';
+                callback();
+            }, 3000);
+        }
+ 
+        function showBreakScreen() {
+            hideAllScreens();
+            splitPanel.style.display = 'none';
+            reviewPanel.style.display = 'none';
+            topBar.style.display = 'none';
+            bottomBar.style.display = 'none';
+            breakScreen.style.display = 'flex';
+            startBreakTimer();
+        }
+ 
+        function resumeAfterBreak() {
+            if (!nextModuleAfterBreak) return;
+            stopBreakTimer();
+            breakScreen.style.display = 'none';
+            startModule(nextModuleAfterBreak.sectionIdx, nextModuleAfterBreak.moduleIdx);
+            nextModuleAfterBreak = null;
+        }
+ 
+        function showCongratsScreen() {
+            hideAllScreens();
+            splitPanel.style.display = 'none';
+            reviewPanel.style.display = 'none';
+            questionNavBtn.style.display = 'none';
+            topBar.style.display = 'none';
+            bottomBar.style.display = 'none';
+            congratsScreen.style.display = 'flex';
+        }
+ 
+        function startModule(sectionIdx, moduleIdx) {
+            hideAllScreens();
+            currentSectionIdx = sectionIdx;
+            currentModuleIdx = moduleIdx;
+            currentQuestionIdx = 0;
+ 
+            topBar.style.display = 'flex';
+            bottomBar.style.display = 'flex';
+            splitPanel.style.display = 'flex';
+            reviewPanel.style.display = 'none';
+            questionNavBtn.style.display = '';
+            reviewNextBtn.style.display = 'none';
+            nextBtn.style.display = 'flex';
+ 
+            updateSectionModuleLabels();
+            toggleTopButtons();
+            resetTimerForModule();
+            renderQuestion(currentQuestionIdx);
+        }
+ 
+        /***********************
+         *  EVENT HANDLERS
+         ***********************/
+        codeInputs.forEach((input, idx) => {
+            input.addEventListener('input', () => {
+                input.value = input.value.replace(/[^0-9]/g, '');
+                if (input.value && idx < codeInputs.length - 1) {
+                    codeInputs[idx + 1].focus();
+                }
+                const filled = [...codeInputs].every(inp => inp.value.length === 1);
+                startBtn.disabled = !filled;
+            });
+ 
+            input.addEventListener('keydown', (e) => {
+                if (e.key === 'Backspace' && !input.value && idx > 0) {
+                    codeInputs[idx - 1].focus();
+                }
+            });
+        });
+ 
+        startBtn.onclick = () => {
+            startScreen.style.display = 'none';
+            questionScreen.style.display = 'flex';
+            startModule(0, 0);
+        };
+ 
+        nextBtn.onclick = () => {
+            if (nextBtn.disabled) return;
+  nextBtn.disabled = true;
+  setTimeout(() => nextBtn.disabled = false, 500);
+            const module = getCurrentModule();
+            if (currentQuestionIdx < module.questions.length - 1) {
+                currentQuestionIdx++;
+                renderQuestion(currentQuestionIdx);
+            } else {
+                showReviewPanel();
+            }
+        };
+ 
+        backBtn.onclick = () => {
+            if (backBtn.disabled) return;
+  backBtn.disabled = true;
+  setTimeout(() => backBtn.disabled = false, 500);
+            if (reviewPanel.style.display === 'flex') {
+                hideReviewPanel();
+                currentQuestionIdx = getCurrentModule().questions.length - 1;
+                renderQuestion(currentQuestionIdx);
+                return;
+            }
+            if (currentQuestionIdx > 0) {
+                currentQuestionIdx--;
+                renderQuestion(currentQuestionIdx);
+            }
+        };
+ 
+        reviewNextBtn.onclick = () => {
+            proceedAfterReview();
+        };
+ 
+ 
+        hideTimerBtn.onclick = () => {
+            timerHidden = !timerHidden;
+            timerValueEl.style.visibility = timerHidden ? 'hidden' : 'visible';
+            hideTimerBtn.textContent = timerHidden ? 'Show' : 'Hide';
+        };
+ 
+        questionNavBtn.onclick = () => {
+            buildQuestionNavGrid();
+            questionNavPopup.style.display = 'block';
+        };
+ 
+        closeNavPopup.onclick = () => {
+            questionNavPopup.style.display = 'none';
+        };
+ 
+        goToReviewBtn.onclick = () => {
+            questionNavPopup.style.display = 'none';
+            showReviewPanel();
+        };
+ 
+        document.addEventListener('click', (e) => {
+            if (!questionNavPopup.contains(e.target) && e.target !== questionNavBtn) {
+                questionNavPopup.style.display = 'none';
+            }
+            if (!directionsContent.contains(e.target) && e.target !== directionsBtn) {
+                directionsContent.style.display = 'none';
+            }
+            if (!moreDropdown.contains(e.target) && e.target !== moreBtn) {
+                moreDropdown.style.display = 'none';
+            }
+        });
+ 
+        directionsBtn.onclick = (e) => {
+            e.stopPropagation();
+            directionsContent.style.display = 'block';
+        };
+        closeDirections.onclick = () => {
+            directionsContent.style.display = 'none';
+        };
+ 
+        highlightsBtn.onclick = () => {
+            highlightsBtn.classList.toggle('active');
+        };
+        calculatorBtn.onclick = () => {
+            calculatorBtn.classList.toggle('active');
+        };
+        referenceBtn.onclick = () => {
+            referenceBtn.classList.toggle('active');
+        };
+        moreBtn.onclick = (e) => {
+            e.stopPropagation();
+            moreDropdown.style.display = moreDropdown.style.display === 'block' ? 'none' : 'block';
+        };
+ 
+        abcBtn.onclick = () => {
+            abcMode = !abcMode;
+            abcBtn.classList.toggle('active', abcMode);
+            applyAbcMode();
+        };
+ 
+        // Divider drag
+        let dragging = false;
+        divider.onmousedown = () => {
+            dragging = true;
+            document.body.style.cursor = 'ew-resize';
+        };
+        document.onmousemove = (e) => {
+            if (!dragging) return;
+            const totalWidth = leftPanelWrap.offsetWidth + rightPanelWrap.offsetWidth + divider.offsetWidth;
+            let newLeftWidth = e.clientX - leftPanelWrap.getBoundingClientRect().left;
+            if (newLeftWidth < 200) newLeftWidth = 200;
+            if (newLeftWidth > totalWidth - 200) newLeftWidth = totalWidth - 200;
+            leftPanelWrap.style.flex = `0 0 ${newLeftWidth}px`;
+            rightPanelWrap.style.flex = `1 1 0`;
+        };
+        document.onmouseup = () => {
+            dragging = false;
+            document.body.style.cursor = '';
+        };
+    </script>
+</body1>
+</body></html>
